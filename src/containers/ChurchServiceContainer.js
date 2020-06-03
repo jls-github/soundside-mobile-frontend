@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ServicesIndex from '/ServicesIndex'
+import ServicesIndex from './ServicesIndex'
 
 const ChurchServiceContainer = () => {
     return (

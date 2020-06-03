@@ -1,26 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import {APIROOT} from '../constraints/index.js'
+import Slide from '../components/Slide.js'
 
 const Slideshow = ({serviceId}) => {
 
     const [service, setService] = useState()
 
-    const populateSlides = (slides) => {
+    const populateSlides = (slides) => { 
         return slides.map(slide => {
-            return <div>{slide.title} - {slide.content}</div>
+            return <Slide slide={slide} key={slide.id}/>
         })
     }
 
-    const populateService = () => {
-        console.log(service)
-        return service.map(section => {
-            return(
-                <div>
-
-                    <h1>{section.title}</h1>
-
+    const populateService = () => { 
+        return service.map(section => { // this needs to be broken out into an individual component
+            return (
+                <div key={section.id}>
+                    <h2>{section.title}</h2>
                     {section.slides[0] ? populateSlides(section.slides) : null}
-
                 </div>
             )
         })
@@ -35,11 +32,11 @@ const Slideshow = ({serviceId}) => {
         }
 
         fetchService()
-    }, [])
+    },[serviceId])
 
     return(
         <div>
-            Slideshow
+            <h1>Slideshow</h1>
             {service ? populateService() : "loading"}
         </div>
     )

@@ -8,8 +8,7 @@ const Service = (props) => {
     const history = useHistory()
 
     const onSelectService = () => {
-        console.log(id)
-        // history.push(`/${id}`) - erroring because not in router
+        history.push(`/church/${id}`)
     }
 
     return (

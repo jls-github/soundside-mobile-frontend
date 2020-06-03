@@ -7,7 +7,6 @@ const Navbar = () => {
         <ul>
             <Link to="/church" >Services</Link>
             <a href="https://soundsidechurch.com/discover.html">About Us</a>
-
         </ul>
     )
 }

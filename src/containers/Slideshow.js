@@ -1,43 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import {APIROOT} from '../constraints/index.js'
-import Slide from '../components/Slide.js'
+import Section from './Section.js'
 
 const Slideshow = ({serviceId}) => {
 
     const [service, setService] = useState()
-
-    const populateSlides = (slides) => { 
-        return slides.map(slide => {
-            return <Slide slide={slide} key={slide.id}/>
+    
+    // Populates each section as its own component which then populate slides
+    const populateSections = () => { 
+        return service.map(section => { 
+            return <Section section={section} key={section.id}/>
         })
     }
 
-    const populateService = () => { 
-        return service.map(section => { // this needs to be broken out into an individual component
-            return (
-                <div key={section.id}>
-                    <h2>{section.title}</h2>
-                    {section.slides[0] ? populateSlides(section.slides) : null}
-                </div>
-            )
-        })
-    }
-
+    // Sets state to the spcific service from url once mounted and upon change of serviceId
     useEffect(() => {
-        
         async function fetchService() {
             let response = await fetch(APIROOT + `/services/${serviceId}`)
             let json = await response.json()
             await setService(json)
         }
-
         fetchService()
-    },[serviceId])
+    }, [serviceId])
 
     return(
         <div>
             <h1>Slideshow</h1>
-            {service ? populateService() : "loading"}
+            {service ? populateSections() : "loading"}
         </div>
     )
 

@@ -1,16 +1,27 @@
 import React, {Fragment} from 'react';
 import ServicesIndex from './ServicesIndex'
+import Slideshow from './Slideshow'
 
-const ChurchServiceContainer = () => {
+const ChurchServiceContainer = ({location}) => {
 
-    
+    const router = () => {
+        const path = location.pathname.split("/")
+
+        if (location.pathname === "/church" || location.pathname === '/church/') {
+            return <ServicesIndex />
+        } else {
+            return <Slideshow serviceId={path[2]}/>
+        }
+
+    }
 
     return (
         <Fragment>
+
             {/* Navbar */}
-            {/* Route for Services Index (if '/') */}
-            <ServicesIndex />
-            {/* Route for specific service (if /:date(5-31) or /:id) */}
+
+            {router()}
+
         </Fragment>
     )
 }

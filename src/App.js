@@ -1,23 +1,17 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import ChurchServiceContainer from './containers/ChurchServiceContainer'
+import ChurchRedirect from './components/ChurchRedirect.js'
 
 function App() {
-
-  const Otherroute = () => {
-    return(
-      <div>Other route</div>
-    )
-  }
 
   return (
     <Fragment>
       <Router>
-      {/* Router for Admin Page - '/admin' */}
-      {/* Router for Church Service page - '/' */}
         <Switch>
+          {/* Router for Admin Page - '/admin' */}
           <Route path="/church" component={ChurchServiceContainer} />
-          <Route path="/" component={Otherroute} />
+          <Route path="*" component={ChurchRedirect} />
         </Switch>
       </Router>
     </Fragment>

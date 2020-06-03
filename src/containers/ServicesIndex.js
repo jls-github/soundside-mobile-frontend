@@ -13,7 +13,7 @@ const ServicesIndex = (props) => {
     }
 
     useEffect(() => {
-        
+
         async function fetchServices() {
             let response = await fetch(APIROOT + '/services')
             let json = await response.json()

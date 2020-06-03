@@ -7,10 +7,10 @@ const ChurchServiceContainer = ({location}) => {
     const router = () => {
         const path = location.pathname.split("/")
 
-        if (location.pathname === "/church" || location.pathname === '/church/') {
-            return <ServicesIndex />
-        } else {
+        if (path[2]) {
             return <Slideshow serviceId={path[2]}/>
+        } else {
+            return <ServicesIndex />
         }
 
     }

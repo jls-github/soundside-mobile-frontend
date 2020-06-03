@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom'
 import {APIROOT} from '../constraints/index.js'
 import Section from './Section.js'
 
 const Slideshow = ({serviceId}) => {
 
     const [service, setService] = useState()
+
+    const history = useHistory()
     
     // Populates each section as its own component which then populate slides
     const populateSections = () => { 
@@ -17,8 +20,13 @@ const Slideshow = ({serviceId}) => {
     useEffect(() => {
         async function fetchService() {
             let response = await fetch(APIROOT + `/services/${serviceId}`)
-            let json = await response.json()
-            await setService(json)
+            if (!response.ok) {
+                console.log(`Redirecting to Service Index`)
+                history.push('/church')
+            } else {
+                let json = await response.json()
+                await setService(json)
+            }
         }
         fetchService()
     }, [serviceId])

@@ -14,7 +14,7 @@ const Section = (props) => {
     return (
         <div>
             <h2>{title}</h2>
-            {slides[0] ? populateSlides(slides) : null}
+            {slides ? populateSlides(slides) : null}
         </div>
     )
 }

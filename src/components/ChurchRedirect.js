@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {useHistory} from 'react-router-dom'
 
-const ChurchRedirect = () => {
+const ChurchRedirect = () => { // this could be replaced by an HOC maybe?
 
     const history = useHistory()
 

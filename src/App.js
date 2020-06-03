@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ChurchServiceContainer from '/containers/ChurchServiceContainer'
+import ChurchServiceContainer from './containers/ChurchServiceContainer'
 
 function App() {
   return (

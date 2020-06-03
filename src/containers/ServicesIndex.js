@@ -23,7 +23,7 @@ const ServicesIndex = () => {
     return(
         <div>
             <h1>Soundside Church</h1>
-            {services ? populateServices() : "No services"}
+            {services ? populateServices() : "loading..."}
         </div>
     )
 }

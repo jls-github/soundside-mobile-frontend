@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import ServicesIndex from './ServicesIndex'
 import Slideshow from './Slideshow'
+import Navbar from '../components/Navbar'
 
 const ChurchServiceContainer = ({location}) => {
 
@@ -18,7 +19,7 @@ const ChurchServiceContainer = ({location}) => {
     return (
         <Fragment>
 
-            {/* Navbar */}
+            <Navbar />
 
             {router()}
 

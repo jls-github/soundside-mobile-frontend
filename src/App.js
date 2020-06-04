@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import ChurchServiceContainer from './containers/ChurchServiceContainer'
-import ChurchRedirect from './components/ChurchRedirect.js'
+import ChurchServiceContainer from './sundayComponents/containers/ChurchServiceContainer'
+import ChurchRedirect from './sundayComponents/components/ChurchRedirect.js'
+import SlideForm from './adminPanelComponents/containers/SlideForm.js'
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <Fragment>
       <Router>
         <Switch>
-          {/* Router for Admin Page - '/admin' */}
+          {/* Router for admin set at slideform for now for testing */}
+          <Route path="/admin" component={SlideForm} />
           <Route path="/church" component={ChurchServiceContainer} />
           <Route path="*" component={ChurchRedirect} />
         </Switch>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom'
-import {APIROOT} from '../constraints/index.js'
+import {APIROOT} from '../../constraints/index.js'
 import Section from './Section.js'
 
 const Slideshow = ({serviceId}) => {

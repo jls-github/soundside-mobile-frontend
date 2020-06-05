@@ -190,7 +190,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     return(
 
         <Fragment>
-            <input type="date" value="serviceDate" onChange={e => {setServiceDate(e.target.value)}} />
+            <input type="date" value={serviceDate} onChange={e => {setServiceDate(e.target.value)}} />
             <SortableContainer onSortEnd={onSectionSortEnd} useDragHandle>
                 {sections ? populateSections() : "loading..."}
             </SortableContainer>

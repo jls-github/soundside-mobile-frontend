@@ -29,7 +29,7 @@ const Slideshow = ({serviceId}) => {
             }
         }
         fetchService()
-    }, [serviceId])
+    }, [serviceId, history])
 
     return(
         <div>

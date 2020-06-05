@@ -25,7 +25,7 @@ const Slideshow = ({serviceId}) => {
                 history.push('/church')
             } else {
                 let json = await response.json()
-                await setService(json)
+                await setService(json.sections)
             }
         }
         fetchService()

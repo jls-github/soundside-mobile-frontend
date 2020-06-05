@@ -5,10 +5,13 @@ import Section from './Section.js'
 import {APIROOT, HEADERS} from '../../constraints/index.js'
 import {useHistory} from 'react-router-dom'
 
+
 const SlideForm = ({serviceId}) => { //this is messy and could be claned up with a state manager
 
     const [sections, setSections] = useState()
     const [serviceDate, setServiceDate] = useState()
+    const [nextSection, setNextSection] = useState(0)
+    const [nextSlide, setNextSlide] = useState(0)
 
     const history = useHistory()
 
@@ -40,8 +43,42 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                 onSlideTitleChange={onSlideTitleChange}
                 onSlideContentChange={onSlideContentChange}
                 onSlideSortEnd={onSlideSortEnd}
+                onAddSlide={onAddSlide}
                 />
         })
+    }
+
+    //add additional sections and slides
+
+    const onAddSection = () => {
+        setSections([
+            ...sections, {
+            title: "",
+            id: nextSection,
+            slides: [
+                {
+                    title: "",
+                    content: ""
+                }
+            ]
+        }])
+        setNextSection(nextSection + 1)
+    }
+
+    const onAddSlide = (sectionId) => {
+        setSections([
+            ...sections.map(section => {
+                if (section.id === sectionId) {
+                    return {...section, slides: [...section.slides, {
+                        title: "",
+                        content: "",
+                        id: nextSlide
+                    }]}
+                }
+                return section
+            })
+        ])
+        setNextSlide(nextSlide + 1)
     }
 
     //controlled forms
@@ -125,10 +162,28 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                     history.push('/admin')
                 } else {
                     let json = await response.json()
-                    await setSections(json)
+                    await setServiceDate(json.date)
+                    await setSections(json.sections)
+                    await setNextSection(json.sections[json.sections.length - 1].id + 1)
+                    await setNextSlide(Math.max(...json.sections.map(section => {
+                        return section.slides.map(slide => slide.id)
+                    }).flat()) + 1)
                 }
             }
             fetchService()
+        } else {
+            setSections([
+                {
+                title: "",
+                id: nextSection,
+                slides: [
+                    {
+                        title: "",
+                        content: ""
+                    }
+                ]
+            }])
+            setNextSection(nextSection + 1)
         }
     }, [history, serviceId])
 
@@ -139,6 +194,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             <SortableContainer onSortEnd={onSectionSortEnd} useDragHandle>
                 {sections ? populateSections() : "loading..."}
             </SortableContainer>
+            <button onClick={onAddSection}>Add new section</button>
             <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
         </Fragment>
 

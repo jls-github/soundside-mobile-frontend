@@ -11,7 +11,8 @@ const Section = sortableElement(({
     onSectionTitleChange, 
     onSlideSortEnd,
     onSlideTitleChange,
-    onSlideContentChange
+    onSlideContentChange,
+    onAddSlide
     }) => {
 
     const populateSlides = () => {
@@ -35,6 +36,7 @@ const Section = sortableElement(({
             <SortableContainer onSortEnd={(sortParams) => onSlideSortEnd(sortParams, id)} useDragHandle>
                 {slides ? populateSlides() : "loading..."}
             </SortableContainer>
+            <button onClick={(e) => onAddSlide(id)} >Add Slide</button>
         </li>
     )
 

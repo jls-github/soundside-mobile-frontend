@@ -41,7 +41,7 @@ const SlideForm = ({serviceId}) => {
             body: JSON.stringify({
                 service: {
                     date: serviceDate,
-                    section_attributes: sectionAttributes()
+                    service_section_attributes: sectionAttributes()
                 }
             })
         })

@@ -58,11 +58,13 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             slides: [
                 {
                     title: "",
-                    content: ""
+                    content: "",
+                    id: nextSlide
                 }
             ]
         }])
         setNextSection(nextSection + 1)
+        setNextSlide(nextSlide + 1)
     }
 
     const onAddSlide = (sectionId) => {
@@ -179,11 +181,13 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                 slides: [
                     {
                         title: "",
-                        content: ""
+                        content: "",
+                        id: nextSlide
                     }
                 ]
             }])
             setNextSection(nextSection + 1)
+            setNextSlide(nextSlide + 1)
         }
     }, [history, serviceId])
 

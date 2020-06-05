@@ -34,16 +34,18 @@ const SlideForm = ({serviceId}) => {
         })
     }
 
+    const serviceFetchBody = () => {
+        return {service: {
+            date: serviceDate,
+            service_section_attributes: sectionAttributes()
+        }}
+    }
+
     const handleSubmit = async () => {
-        const response = await fetch(APIROOT + '/services' + (serviceId ? `/${serviceId}` : ""), { //bracket hell - can this be claned up?
+        const response = await fetch(APIROOT + '/services' + (serviceId ? `/${serviceId}` : ""), {
             method: serviceId ? "PUT" : "POST",
             headers: HEADERS,
-            body: JSON.stringify({
-                service: {
-                    date: serviceDate,
-                    service_section_attributes: sectionAttributes()
-                }
-            })
+            body: JSON.stringify(serviceFetchBody())
         })
         const json = await response.json()
         console.log(json)

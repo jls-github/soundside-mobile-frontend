@@ -1,10 +1,18 @@
-import React, {Fragment} from 'react';
+import React from 'react';
+import {useHistory} from 'react-router-dom';
 
-const Service = ({date}) => {
+const Service = ({date, id}) => {
+
+    const history = useHistory()
+
+    const handleClick = () => {
+        history.push(`admin/service/${id}`)
+    }
+
     return(
-        <Fragment>
+        <div onClick={handleClick} >
             {date}
-        </Fragment>
+        </div>
     )
 }
 

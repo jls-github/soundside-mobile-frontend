@@ -10,7 +10,7 @@ const AdminPanelContainer = ({location}) => {
 
         switch(path[2]) {
             case "login": return <Login />
-            case "new-service": return <SlideForm />
+            case "service": return <SlideForm serviceId={path[3]}/>
             default: return <ServicesContainer />
         }
 

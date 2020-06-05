@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import arrayMove from 'array-move';
 import SortableContainer from '../components/SortableContainer.js'
 import Section from './Section.js'
-import {APIROOT} from '../../constraints/index.js'
+import {APIROOT, HEADERS} from '../../constraints/index.js'
 import {useHistory} from 'react-router-dom'
 
 const SlideForm = ({serviceId}) => {
 
     const [sections, setSections] = useState() //dummy state to start
+    const [serviceDate, setServiceDate] = useState()
 
     const history = useHistory()
 
@@ -21,11 +22,35 @@ const SlideForm = ({serviceId}) => {
         })
     }
 
+    const slideAttributes = (slides) => {
+        return slides.map(slide => {
+            return {title: slide.title, content: slide.content}
+        })
+    }
+
+    const sectionAttributes = () => {
+        return sections.map(section => {
+            return {title: section.title, slide_attributes: slideAttributes(section.slides)}
+        })
+    }
+
+    const handleSubmit = async () => {
+        const response = await fetch(APIROOT + '/services' + (serviceId ? `/${serviceId}` : ""), { //bracket hell - can this be claned up?
+            method: serviceId ? "PUT" : "POST",
+            headers: HEADERS,
+            body: JSON.stringify({
+                service: {
+                    date: serviceDate,
+                    section_attributes: sectionAttributes()
+                }
+            })
+        })
+        const json = await response.json()
+        console.log(json)
+    }
+
     useEffect(() => {
-
         if (serviceId) {
-
-
             async function fetchService() {
                 let response = await fetch(APIROOT + `/services/${serviceId}`)
                 if (!response.ok) {
@@ -41,9 +66,14 @@ const SlideForm = ({serviceId}) => {
     }, [history, serviceId])
 
     return(
-        <SortableContainer onSortEnd={onSortEnd} useDragHandle>
-            {sections ? populateSections() : null}
-        </SortableContainer>
+
+        <Fragment>
+            <SortableContainer onSortEnd={onSortEnd} useDragHandle>
+                {sections ? populateSections() : null}
+            </SortableContainer>
+            <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
+        </Fragment>
+
     )
 }
 

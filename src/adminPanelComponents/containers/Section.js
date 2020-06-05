@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {sortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 import Slide from '../components/Slide.js';

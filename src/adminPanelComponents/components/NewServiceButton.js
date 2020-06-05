@@ -6,7 +6,7 @@ const NewServiceButton = () => {
     const history = useHistory()
 
     const handleClick = () => {
-        history.push('/admin/new-service')
+        history.push('/admin/service')
     }
 
     return(

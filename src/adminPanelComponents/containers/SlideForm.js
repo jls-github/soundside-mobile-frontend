@@ -18,9 +18,20 @@ const SlideForm = ({serviceId}) => {
 
     const populateSections = () => {
         return sections.map((section, index) => {
-            return <Section key={`section-${section.id}`} index={index} title={section.title} oldSlides={section.slides} />
+            return <Section key={`section-${section.id}`} id={section.id} index={index} title={section.title} oldSlides={section.slides} onSectionTitleChange={onSectionTitleChange} />
         })
     }
+
+    const onSectionTitleChange = (e, key) => {
+        setSections(sections.map(section => {
+            if (section.id === key) {
+                section.title = e.target.value
+            }
+            return section
+        }))
+    }
+
+    // params for post/put request
 
     const slideAttributes = (slides) => {
         return slides.map(slide => {
@@ -70,6 +81,7 @@ const SlideForm = ({serviceId}) => {
     return(
 
         <Fragment>
+            <input type="date" value="serviceDate" onChange={e => {setServiceDate(e.target.value)}} />
             <SortableContainer onSortEnd={onSortEnd} useDragHandle>
                 {sections ? populateSections() : null}
             </SortableContainer>

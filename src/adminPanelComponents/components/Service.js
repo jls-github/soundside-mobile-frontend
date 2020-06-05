@@ -6,7 +6,7 @@ const Service = ({date, id}) => {
     const history = useHistory()
 
     const handleClick = () => {
-        history.push(`admin/service/${id}`)
+        history.push(`/admin/service/${id}`)
     }
 
     return(

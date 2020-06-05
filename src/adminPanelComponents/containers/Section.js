@@ -5,7 +5,7 @@ import Slide from '../components/Slide.js';
 import DragHandle from '../components/DragHandle.js';
 import SortableContainer from '../components/SortableContainer.js'
 
-const Section = sortableElement(({title, oldSlides}) => {
+const Section = sortableElement(({title, oldSlides, id, onSectionTitleChange}) => {
     
     
     const [slides, setSlides] = useState(oldSlides) //dummy state to start
@@ -25,7 +25,7 @@ const Section = sortableElement(({title, oldSlides}) => {
     return(
         <li>
             <DragHandle />
-            <span>{title}</span>
+            <input type="text" placeholder="Section Title" value={title} onChange={e => onSectionTitleChange(e, id)} />
             <SortableContainer onSortEnd={onSortEnd} useDragHandle>
                 {slides ? populateSlides() : null}
             </SortableContainer>

@@ -6,11 +6,12 @@ import AdminPanelContainer from './adminPanelComponents/containers/AdminPanelCon
 
 function App() {
 
+  console.log(window)
+
   return (
     <Fragment>
       <Router>
         <Switch>
-          {/* Router for admin set at slideform for now for testing */}
           <Route path="/admin" component={AdminPanelContainer} />
           <Route path="/church" component={ChurchServiceContainer} />
           <Route path="*" component={ChurchRedirect} />

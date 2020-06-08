@@ -1,0 +1,53 @@
+.sunday-service-container
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: block
+    opacity: 100%
+
+    .sunday-service-container-navbar-active
+        background-color: grey
+        opacity: 50%
+        z-index: 1
+
+    .sunday-service-background
+        background-image: linear-gradient(to top left, rgba(113, 214, 184, 1), rgba(251, 254, 253, 1))
+        opacity: 30%
+        height: 100%
+        width: 100%
+        position: absolute
+        z-index: -1
+
+    .navbar-button
+        list-style-type: none
+        padding-left: 0
+
+        li
+            margin: 2px
+            padding: 0px
+            width: 20px
+            height: 4px
+            background-color: black
+            border-radius: 20px
+            display: block
+
+
+.navbar
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    z-index: 2
+
+
+.navbar-inactive
+    left: -40%
+    right: 100%
+    transition: 1s
+
+.navbar-active
+    left: 0%
+    right: 60%
+    transition: 1s

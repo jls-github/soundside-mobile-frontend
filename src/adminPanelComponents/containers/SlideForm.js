@@ -150,7 +150,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             body: JSON.stringify(serviceFetchBody())
         })
         const json = await response.json()
-        await history.push('/admin')
+        history.push('/admin')
         console.log(json)
     }
 
@@ -160,7 +160,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             headers: HEADERS
         })
         const json = await response.json()
-        await history.push('/admin')
+        history.push('/admin')
         console.log(json)
     }
 

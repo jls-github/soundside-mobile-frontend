@@ -132,14 +132,14 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
 
     const sectionAttributes = () => {
         return sections.map(section => {
-            return {title: section.title, slide_attributes: slideAttributes(section.slides)}
+            return {title: section.title, slides_attributes: slideAttributes(section.slides)}
         })
     }
 
     const serviceFetchBody = () => {
         return {service: {
             date: serviceDate,
-            service_section_attributes: sectionAttributes()
+            service_sections_attributes: sectionAttributes()
         }}
     }
 
@@ -150,6 +150,17 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             body: JSON.stringify(serviceFetchBody())
         })
         const json = await response.json()
+        await history.push('/admin')
+        console.log(json)
+    }
+
+    const handleDelete = async () => {
+        const response = await fetch(APIROOT + '/services/' + serviceId, {
+            method: "DELETE",
+            headers: HEADERS
+        })
+        const json = await response.json()
+        await history.push('/admin')
         console.log(json)
     }
 
@@ -200,6 +211,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             </SortableContainer>
             <button onClick={onAddSection}>Add new section</button>
             <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
+            {serviceId ? <button onClick={handleDelete}>Delete Service</button> : null}
         </Fragment>
 
     )

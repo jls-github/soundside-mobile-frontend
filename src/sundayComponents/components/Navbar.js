@@ -1,5 +1,6 @@
 import React, {useRef, useState, Fragment, useEffect} from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Logo from '../../images/soundside-logo.png'
 import {Link} from 'react-router-dom'
 
 const Navbar = () => {
@@ -39,7 +40,7 @@ const Navbar = () => {
                         <li></li>
                         <li></li>
                     </ul>
-                    <div className="navbar-logo">Soundside Church</div>
+                    <img className="navbar-logo" src={Logo}/>
                 </div>
                 <div className="navbar navbar-inactive" ref={navRef}>
                     <div className="navbar-header">Menu</div>

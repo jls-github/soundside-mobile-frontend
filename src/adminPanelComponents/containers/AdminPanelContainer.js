@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import SlideForm from './SlideForm.js';
 import Login from '../components/Login.js';
 import ServicesContainer from './ServicesContainer.js'
+import Navbar from '../components/Navbar.js'
 
 const AdminPanelContainer = ({location}) => {
 
@@ -21,6 +22,7 @@ const AdminPanelContainer = ({location}) => {
             {/* Route for Login */}
             {/* Route for SlideForm */}
             {/* Route for Service Index */}
+            <Navbar />
             {router()}
 
             

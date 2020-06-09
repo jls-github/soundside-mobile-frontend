@@ -68,7 +68,7 @@
             max-width: 60%
             margin-right: 10%
             font-size: 1.5em
-            
+            margin: auto            
     .navbar
         display: block
         position: absolute
@@ -79,7 +79,7 @@
         text-align: center
 
         .navbar-header
-            margin-top: 15%   
+            margin-top: 13%   
             font-size: 2rem
 
         .navbar-list
@@ -113,3 +113,75 @@
         right: 40%
         transition: 1s
 
+    .main-content-container
+        position: absolute
+        top: 10%
+        bottom: 0
+        left: 0
+        right: 0
+
+        .slide-container
+            position: absolute
+            top: 5%
+            left: 5%
+            bottom: 5%
+            right: 5%
+            background-color: snow
+            border: solid 2px
+            border-radius: 20px
+            padding: 5%
+            margin: 0
+            box-shadow: 1px 1px 5px black    
+
+            .slide
+                opacity: 1
+                position: absolute
+                text-align: center
+                left: 10%
+                right: 10%
+                width: 80%
+                position: absolute
+
+                .slide-title
+                    font-size: 2rem
+                    margin-bottom: 10%
+
+                .slide-content
+                    line-height: 2
+                    font-size: 1.35rem
+                    content: "\A"
+                    white-space: pre-line
+
+            .slide-enter
+                opacity: 0.01
+
+            .slide-enter.slide-enter-active
+                opacity: 1
+                transition: opacity 700ms ease-in
+
+            .slide-leave
+                opacity: 1
+
+            .slide-leave.slide-leave-active
+                opacity: 0.01
+                transition: opacity 700ms ease-in
+
+            .slide-buttons
+                position: absolute
+                display: flex
+                top: 90%
+                left: 0
+                right: 0
+                justify-content: space-between
+                width: 100%
+                padding: 0
+                margin: 0
+
+                .left-button
+                    left: 10%
+                    margin-left: 10%
+
+                .right-button
+                    right: 10%
+                    margin-right: 10%
+        

@@ -40,12 +40,17 @@ const Login = () => {
     }
 
     return(
-        <form>
-            {error ? <div>{error}</div> : null }
-            <input placeholder="username" value={username} onChange={e => onChangeUsername(e)} />
-            <input placeholder="password" value={password} onChange={e => onChangePassword(e)} />
-            <button type="submit" onClick={e => handleSubmit(e)}>Login</button>
-        </form>
+        <div className="login-wrapper">
+            <div className="login-card">
+                <h1>Log In</h1>
+                {error ? <div className="login-error">{error}</div> : null }
+                <form>
+                    <input placeholder="username" value={username} onChange={e => onChangeUsername(e)} />
+                    <input type="password" placeholder="password" value={password} onChange={e => onChangePassword(e)} />
+                    <button type="submit" onClick={e => handleSubmit(e)}>Login</button>
+                </form>
+            </div>
+        </div>
     )
 
 }

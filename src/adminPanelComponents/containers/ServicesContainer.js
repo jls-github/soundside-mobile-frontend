@@ -3,6 +3,8 @@ import Service from '../components/Service.js'
 import NewServiceButton from '../components/NewServiceButton.js'
 import {APIROOT} from '../../constraints/index.js'
 import ValidationHOC from '../HOCs/ValidationHOC'
+import AdminPanelWrapperHOC from '../HOCs/AdminPanelWrapperHOC'
+
 
 const ServicesContainer = () => {
 
@@ -32,4 +34,4 @@ const ServicesContainer = () => {
     )
 }
 
-export default ValidationHOC(ServicesContainer)
+export default ValidationHOC(AdminPanelWrapperHOC(ServicesContainer))

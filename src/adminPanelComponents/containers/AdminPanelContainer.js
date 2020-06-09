@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom';
 import SlideForm from './SlideForm.js';
 import Login from '../components/Login.js';
 import ServicesContainer from './ServicesContainer.js'
-import Navbar from '../components/Navbar.js'
+import '../admin-panel.sass'
 
 const AdminPanelContainer = ({location}) => {
 
@@ -26,12 +26,11 @@ const AdminPanelContainer = ({location}) => {
     }
 
     return(
-        <Fragment>
-            <Navbar />
+        <div className="admin-panel-container">
             {router()}
 
             
-        </Fragment>
+        </div>
     )
 
 }

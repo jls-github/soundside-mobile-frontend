@@ -1,0 +1,70 @@
+.admin-panel-container
+    background-image: linear-gradient(to top left, rgba(113, 214, 184, 1), rgba(251, 254, 253, 1))
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+    .login-wrapper
+        position: absolute
+        height: 100%
+        width: 100%
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        
+        .login-card
+            height: 300px
+            width: 400px
+            border: solid black 1px
+            border-radius: 10px
+            box-shadow: 1px 1px 5px black
+            background-color: snow
+            justify-content: center
+            align-items: center
+            text-align: center
+
+            h1
+                
+            .login-error
+                position: relative
+                font-size: 10pt
+                top: 0
+
+            form
+                position: relative
+                width: 75%
+                left: 12.5%
+                right: 12.5%
+                display: grid
+
+                input
+                    margin-top: 10px
+                    margin-bottom: 10px
+
+                button
+                    display: block
+                    margin-top: 10px
+                    background-color: rgba(118, 194, 95, 1)
+                    border: 2px solid rgba(118, 194, 95, 1)
+                    color: white
+                    border-radius: 10px
+                    box-shadow: 1px 1px 1px black
+                    transition: background-color 500ms
+
+
+                button:active
+                    background-color: snow
+                    color: rgba(118, 194, 95, 1)
+
+    .admin-panel-wrapper
+        position: absolute
+        width: 100%
+        height: 100%
+
+        

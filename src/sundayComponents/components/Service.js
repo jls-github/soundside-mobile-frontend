@@ -6,6 +6,19 @@ const Service = (props) => {
 
     const {date, id} = props
 
+    const formattedDate = () => {
+        const splitDate = date.split(" ")
+
+        const month = splitDate[0]
+        const day = splitDate[2] ? splitDate[2] : splitDate[1]
+        return (
+            <div className="service-date">
+                {month} <br />
+                {day}
+            </div>
+        )
+    }
+
     const history = useHistory()
 
     const onSelectService = () => {
@@ -14,7 +27,7 @@ const Service = (props) => {
 
     return (
         <div className="service-line">
-            <div className="service-date-box"><div>{date}</div></div>
+            <div className="service-date-box">{formattedDate()}</div>
                 <div className="service" onClick={onSelectService}>
                     <img src={Gathering}/>
                     <div className="service-lettering">Sunday Service</div>

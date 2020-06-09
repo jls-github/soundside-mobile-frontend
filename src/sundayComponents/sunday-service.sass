@@ -51,7 +51,7 @@
         .navbar-button
             list-style-type: none
             padding-left: 0
-            margin-left: 7%
+            margin-left: 5%
 
             li
                 margin-top: 6px
@@ -120,6 +120,67 @@
         left: 0
         right: 0
 
+        .services-index
+            position: absolute
+            top: 5%
+            bottom: 5%
+            left: 5%
+            right: 5%
+            text-align: center
+            justify-content: center
+
+            .services-header
+                display: block
+                font-size: 2rem
+                margin-bottom: 10%
+                border-top: solid 1px rgba(0, 0, 0, .25)
+                border-bottom: solid 1px rgba(0, 0, 0, .25)
+
+            .services-list
+
+                .service-line
+                    display: block
+                    position: absolute
+                    height: 17%
+                    width: 100%
+                    display: grid
+                    grid-template-columns: 25% 100%
+                    align-items: center
+
+                    .service-date-box //change this to a gradient?
+                        background-color: rgba(0, 0, 0, 1)
+                        height: 100%
+                        width: 100%
+
+                    .service
+                        height: 100%
+                        left: 25%
+                        width: 75%
+                        overflow: hidden
+                        background-color: black
+                        border-radius: 2px
+                        padding: 0
+                        margin: 0
+                        align-items: center
+                        display: flex
+
+                        img
+                            max-width: 100%
+                            width: 100%
+                            display: block
+                            opacity: 50%
+
+                        .service-lettering
+                            position: absolute
+                            background-color: rgba(0, 0, 0, 0.95)
+                            color: white
+                            bottom: 0
+                            right: 0
+                            padding-left: 2%
+                            padding-right: 2%
+                            font-size: 1.65rem
+                            opacity: 90%
+                            
         .slide-container
             position: absolute
             top: 5%
@@ -149,7 +210,6 @@
                 .slide-content
                     line-height: 2
                     font-size: 1.35rem
-                    content: "\A"
                     white-space: pre-line
 
             .slide-enter

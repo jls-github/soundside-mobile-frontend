@@ -1,22 +1,25 @@
-import React from 'react';
-import Slide from '../components/Slide.js'
+// import React from 'react';
+// import Slide from '../components/Slide.js'
 
-const Section = (props) => {
 
-    const {title, slides} = props.section
+// THIS FILE IS NO LONGER BEING USED...
 
-    const populateSlides = (slides) => { 
-        return slides.map(slide => {
-            return <Slide slide={slide} key={slide.id}/>
-        })
-    }
+// const Section = (props) => {
 
-    return (
-        <div>
-            <h2>{title}</h2>
-            {slides ? populateSlides(slides) : null}
-        </div>
-    )
-}
+//     const {title, slides} = props.section
 
-export default Section
+//     const populateSlides = (slides) => { 
+//         return slides.map(slide => {
+//             return <Slide slide={slide} key={slide.id}/>
+//         })
+//     }
+
+//     return (
+//         <div>
+//             <h2>{title}</h2>
+//             {slides ? populateSlides(slides) : null}
+//         </div>
+//     )
+// }
+
+// export default Section

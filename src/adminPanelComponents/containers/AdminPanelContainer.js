@@ -27,9 +27,6 @@ const AdminPanelContainer = ({location}) => {
 
     return(
         <Fragment>
-            {/* Route for Login */}
-            {/* Route for SlideForm */}
-            {/* Route for Service Index */}
             <Navbar />
             {router()}
 

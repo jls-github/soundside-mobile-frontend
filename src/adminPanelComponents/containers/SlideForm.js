@@ -4,12 +4,13 @@ import SortableContainer from '../components/SortableContainer.js'
 import Section from './Section.js'
 import {APIROOT, HEADERS} from '../../constraints/index.js'
 import {useHistory} from 'react-router-dom'
+import ValidationHOC from '../HOCs/ValidationHOC.js'
 
 
 const SlideForm = ({serviceId}) => { //this is messy and could be claned up with a state manager
 
-    const [sections, setSections] = useState()
-    const [serviceDate, setServiceDate] = useState()
+    const [sections, setSections] = useState(null)
+    const [serviceDate, setServiceDate] = useState("")
     const [nextSection, setNextSection] = useState(0)
     const [nextSlide, setNextSlide] = useState(0)
 
@@ -146,7 +147,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     const handleSubmit = async () => {
         const response = await fetch(APIROOT + '/services' + (serviceId ? `/${serviceId}` : ""), {
             method: serviceId ? "PUT" : "POST",
-            headers: HEADERS,
+            headers: {...HEADERS, Authorization: `Bearer ${localStorage.getItem("token")}`},
             body: JSON.stringify(serviceFetchBody())
         })
         const json = await response.json()
@@ -157,7 +158,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     const handleDelete = async () => {
         const response = await fetch(APIROOT + '/services/' + serviceId, {
             method: "DELETE",
-            headers: HEADERS
+            headers: {...HEADERS, Authorization: `Bearer ${localStorage.getItem("token")}`}
         })
         const json = await response.json()
         history.push('/admin')
@@ -217,4 +218,4 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     )
 }
 
-export default SlideForm
+export default ValidationHOC(SlideForm)

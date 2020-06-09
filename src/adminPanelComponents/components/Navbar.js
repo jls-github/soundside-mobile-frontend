@@ -1,11 +1,19 @@
 import React, {Fragment} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 const Navbar = () => {
+
+    const history = useHistory()
+
+    const handleLogout = () => {
+        localStorage.setItem("token", "")
+        history.push("/admin/login")
+    }
+
     return(
         <Fragment>
             <Link to="/admin">All Services</Link>
-            <Link to="/admin/login">Logout</Link>
+            <div onClick={handleLogout}>Logout</div>
         </Fragment>
     )
 }

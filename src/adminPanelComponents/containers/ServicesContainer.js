@@ -2,6 +2,7 @@ import React, {Fragment, useState, useEffect} from 'react';
 import Service from '../components/Service.js'
 import NewServiceButton from '../components/NewServiceButton.js'
 import {APIROOT} from '../../constraints/index.js'
+import ValidationHOC from '../HOCs/ValidationHOC'
 
 const ServicesContainer = () => {
 
@@ -31,4 +32,4 @@ const ServicesContainer = () => {
     )
 }
 
-export default ServicesContainer
+export default ValidationHOC(ServicesContainer)

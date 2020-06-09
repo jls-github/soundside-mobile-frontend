@@ -40,13 +40,13 @@ const Navbar = () => {
                         <li></li>
                         <li></li>
                     </ul>
-                    <img className="navbar-logo" src={Logo}/>
+                    <img className="navbar-logo" src={Logo} alt="Soundside Church"/>
                 </div>
                 <div className="navbar navbar-inactive" ref={navRef}>
                     <div className="navbar-header">Menu</div>
                     <ul className="navbar-list" >
-                        <li><Link to="/church" >Services</Link></li>
-                        <li><a href="https://soundsidechurch.com/discover.html">About Us</a></li>
+                        <li onClick={handleNavbarSlide}><Link to="/church" >Services</Link></li>
+                        <li onClick={handleNavbarSlide}><a href="https://soundsidechurch.com/discover.html">About Us</a></li>
                     </ul>
                 </div>
             </div>

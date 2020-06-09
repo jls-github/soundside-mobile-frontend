@@ -22,7 +22,9 @@ const ChurchServiceContainer = ({location}) => {
             <div className="sunday-service-container">
                 <div className="sunday-service-background"></div>
                 <Navbar />
+                <div className="main-content-container">
                 {router()}
+                </div>
             </div>
 
         </Fragment>

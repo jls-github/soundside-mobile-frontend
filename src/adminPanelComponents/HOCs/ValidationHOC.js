@@ -12,7 +12,7 @@ export default function ValidationHOC(WrappedComponent) {
 
             const authorizationSwitch = () => {
                 switch(authorized) {
-                    case("loading"): return <div>Loading...</div>
+                    case("loading"): return null
                     case(false): 
                         history.push('/admin/login')
                         break
@@ -37,7 +37,7 @@ export default function ValidationHOC(WrappedComponent) {
 
             return (
                 <Fragment>
-                {authorizationSwitch()}
+                    {authorizationSwitch()}
                 </Fragment>
             )
         }

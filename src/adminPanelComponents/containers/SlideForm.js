@@ -152,8 +152,11 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             body: JSON.stringify(serviceFetchBody())
         })
         const json = await response.json()
-        history.push('/admin')
-        console.log(json)
+        if (json.error) {
+            console.log(error)
+        } else {
+            history.push('/admin')
+        }
     }
 
     const handleDelete = async () => {

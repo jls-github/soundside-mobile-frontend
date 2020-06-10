@@ -293,16 +293,26 @@ button
     position: relative
 
     input
+        width: 60%
+        text-align: center
+        background-color: snow
+        border: none
+        font-weight: bold
+
+    input::placeholder
 
     textarea
         margin-top: 10px
         height: 100px
-        width: 80%
-        min-width: 80%
-        max-width: 80%
+        width: 60%
         overflow: scroll
         resize: none
         margin-bottom: 5px
+        border: none
+        background-color: snow
+        text-align: center
+
+    textarea::placeholder
 
 .delete-x
     position: absolute
@@ -310,6 +320,7 @@ button
     right: 10px
     font-size: 8pt
     z-index: 4
+    font-weight: bold
 
 .delete-x:hover
     cursor: pointer

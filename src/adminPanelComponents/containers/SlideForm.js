@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, Fragment} from 'react';
 import arrayMove from 'array-move';
 import SortableContainer from '../components/SortableContainer.js'
 import Section from './Section.js'
@@ -242,19 +242,24 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     return(
 
         <div className="slide-form-wrapper" ref={slideFormContainer}>
-            <div className="section-date-wrapper">
-                Service Date<br />
-                <input type="date" value={serviceDate} onChange={e => {setServiceDate(e.target.value)}} />
-            </div>
-            <SortableContainer onSortEnd={onSectionSortEnd} lockAxis="y" helperContainer={slideFormContainer.current} distance="1">
-                {sections ? populateSections() : "loading..."}
-            </SortableContainer>
-            <div className="slide-button-wrapper">
+            {sections ? 
+                <Fragment>
 
-                <button className="new-section-button" onClick={onAddSection}>Add new section</button>
-                <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
-                {serviceId ? <button className="delete-button" onClick={handleDelete}>Delete Service</button> : null}
-            </div>
+                <div className="section-date-wrapper">
+                    Service Date<br />
+                    <input type="date" value={serviceDate} onChange={e => {setServiceDate(e.target.value)}} />
+                </div>
+                <SortableContainer onSortEnd={onSectionSortEnd} lockAxis="y" helperContainer={slideFormContainer.current} distance="1">
+                    {populateSections()}
+                </SortableContainer>
+                <div className="slide-button-wrapper">
+
+                    <button className="new-section-button" onClick={onAddSection}>Add new section</button>
+                    <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
+                    {serviceId ? <button className="delete-button" onClick={handleDelete}>Delete Service</button> : null}
+                </div>
+                </Fragment>
+            : "loading..." }
         </div>
 
     )

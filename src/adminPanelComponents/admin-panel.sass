@@ -63,6 +63,8 @@ button
                 input
                     margin-top: 10px
                     margin-bottom: 10px
+                    border: none
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.5)
 
                 button
                     display: block
@@ -71,12 +73,12 @@ button
                     border-radius: 10px
                     box-shadow: 1px 1px 1px black
                     transition: background-color 500ms
-                    background-color: snow
-                    color: rgba(118, 194, 95, 1)
-
-                button:hover
                     color: white
                     background-color: rgba(118, 194, 95, 1)
+
+                button:hover
+                    background-color: snow
+                    color: rgba(118, 194, 95, 1)
 
     .admin-panel-wrapper
         position: absolute
@@ -171,17 +173,13 @@ button
                         border-radius: 10px
                         box-shadow: 1px 1px 1px black
                         transition: background-color 500ms
-                        background-color: snow
-                        color: rgba(118, 194, 95, 1)
-
-                    .service:hover
                         background-color: rgba(118, 194, 95, 1)
                         color: white
-                        cursor: pointer
 
-                    .service:active
-                        background-color: grey
-                        border: 2px solid grey
+                    .service:hover
+                        background-color: snow
+                        color: rgba(118, 194, 95, 1)
+                        cursor: pointer
 
                 .new-service-button
                     display: block

@@ -10,7 +10,7 @@ const NewServiceButton = () => {
     }
 
     return(
-        <button onClick={handleClick} >New Service</button>
+        <button className="new-service-button" onClick={handleClick} >New Service</button>
     )
 }
 

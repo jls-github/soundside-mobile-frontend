@@ -10,7 +10,7 @@ const Service = ({date, id}) => {
     }
 
     return(
-        <div onClick={handleClick} >
+        <div className="service" onClick={handleClick} >
             {date}
         </div>
     )

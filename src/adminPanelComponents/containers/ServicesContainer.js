@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Service from '../components/Service.js'
 import NewServiceButton from '../components/NewServiceButton.js'
 import {APIROOT} from '../../constraints/index.js'
@@ -27,10 +27,14 @@ const ServicesContainer = () => {
     }, [])
 
     return(
-        <Fragment>
-            <NewServiceButton />
-            {services ? populateServices() : 'loading...'}
-        </Fragment>
+        <div className="services-container">
+            <div className="services-index">
+                <div className="services-index-grid">
+                    {services ? populateServices() : 'loading...'}
+                </div>
+                    <NewServiceButton />
+            </div> 
+        </div>
     )
 }
 

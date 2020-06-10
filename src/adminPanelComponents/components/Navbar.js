@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import {Link, useHistory} from 'react-router-dom'
 
 const Navbar = () => {
@@ -11,10 +11,10 @@ const Navbar = () => {
     }
 
     return(
-        <Fragment>
-            <Link to="/admin">All Services</Link>
-            <div onClick={handleLogout}>Logout</div>
-        </Fragment>
+        <div className="navbar-wrapper">
+            <li><Link to="/admin">All Services</Link></li>
+            <li><div onClick={handleLogout}>Logout</div></li>
+        </div>
     )
 }
 

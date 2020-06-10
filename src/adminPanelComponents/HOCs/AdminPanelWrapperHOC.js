@@ -8,7 +8,9 @@ export default function AdminPanelWrapperHOC(WrappedComponent) {
             return (
                 <div className="admin-panel-wrapper">
                     <Navbar />
-                    <WrappedComponent {...props} />
+                    <div className="admin-main-section">
+                        <WrappedComponent {...props} />
+                    </div>
                 </div>
             )
         }

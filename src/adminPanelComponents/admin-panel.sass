@@ -10,6 +10,9 @@ input
 
 textarea
     font-family: Tahoma, Geneva, sans-serif
+
+button
+    cursor: pointer
     
 .admin-panel-container
     background-image: linear-gradient(to top left, rgba(113, 214, 184, 1), rgba(251, 254, 253, 1))
@@ -71,7 +74,6 @@ textarea
                     box-shadow: 1px 1px 1px black
                     transition: background-color 500ms
 
-
                 button:active
                     background-color: snow
                     color: rgba(118, 194, 95, 1)
@@ -93,6 +95,11 @@ textarea
             li
                 list-style: none
                 padding: 0
+                cursor: pointer
+
+            a
+                color: inherit
+                text-decoration: inherit
 
         .services-container
             position: absolute
@@ -100,6 +107,7 @@ textarea
             width: 100%
             height: 100%
             justify-content: center
+
 
             .services-index
                 margin-top: 2.5%
@@ -113,8 +121,16 @@ textarea
                 align-items: center
                 justify-content: center
                 display: grid
-                grid-template-rows: 80% 20%
+                grid-template-rows: 0 80% 10%
                 grid-template-columns: 80%
+
+                .services-header
+                    display: inline-block
+                    margin-top: 5%
+                    margin-left: auto
+                    margin-right: auto
+                    text-align: center
+                    font-size: 1.5rem
 
                 .services-index-grid
                     display: grid
@@ -143,6 +159,7 @@ textarea
                     .service:hover
                         background-color: rgba(118, 194, 95, 1)
                         color: white
+                        cursor: pointer
 
                     .service:active
                         background-color: grey

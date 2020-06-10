@@ -223,8 +223,8 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
 
                 <button className="new-section-button" onClick={onAddSection}>Add new section</button>
                 <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
+                {serviceId ? <button onClick={handleDelete}>Delete Service</button> : null}
             </div>
-            {serviceId ? <button onClick={handleDelete}>Delete Service</button> : null}
         </div>
 
     )

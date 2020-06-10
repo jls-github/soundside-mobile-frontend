@@ -153,7 +153,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
         })
         const json = await response.json()
         if (json.error) {
-            console.log(error)
+            console.log(json.error)
         } else {
             history.push('/admin')
         }

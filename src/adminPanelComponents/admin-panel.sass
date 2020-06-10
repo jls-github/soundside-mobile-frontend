@@ -67,16 +67,16 @@ button
                 button
                     display: block
                     margin-top: 10px
-                    background-color: rgba(118, 194, 95, 1)
                     border: 2px solid rgba(118, 194, 95, 1)
-                    color: white
                     border-radius: 10px
                     box-shadow: 1px 1px 1px black
                     transition: background-color 500ms
-
-                button:active
                     background-color: snow
                     color: rgba(118, 194, 95, 1)
+
+                button:hover
+                    color: white
+                    background-color: rgba(118, 194, 95, 1)
 
     .admin-panel-wrapper
         position: absolute
@@ -176,7 +176,7 @@ button
                     transition: background-color 500ms
                     width: 100px
 
-                .new-service-button:active
+                .new-service-button:hover
                     background-color: snow
                     color: rgba(118, 194, 95, 1)
 
@@ -202,6 +202,25 @@ button
                     margin-left: 5px
                     margin-right: 5px
                     margin-bottom: 100px
+                    background-color: rgba(118, 194, 95, 1)
+                    border: 2px solid rgba(118, 194, 95, 1)
+                    color: white
+                    border-radius: 10px
+                    box-shadow: 1px 1px 1px black
+                    transition: background-color 500ms
+
+                button:hover
+                    background-color: snow
+                    color: rgba(118, 194, 95, 1)
+
+                .delete-button
+                    color: snow
+                    background-color: red
+                    border-color: red
+
+                .delete-button:hover
+                    color: red
+                    background-color: snow
 
             ul
                 padding-left: 0
@@ -217,6 +236,11 @@ button
                 border-radius: 20px
                 margin-top: 10px
                 margin-bottom: 10px
+                position: relative
+
+                .delete-x
+                    top: 10px
+                    right: 20px
 
                 .section-grid
                     display: grid
@@ -243,31 +267,49 @@ button
                         width: 100px
 
                 .slide-wrapper
-                    width: 40%
+                    width: 80%
+                    height: 100%
                     margin-left: auto
                     margin-right: auto
 
-                    .slide-container
-                        background-color: snow
-                        text-align: center
-                        border: 1px solid rgba(0, 0, 0, 0.25)
-                        border-radius: 5px
-                        box-shadow: 1px 1px 2px
-                        margin-bottom: 10px
+                    .sortable
                         width: 100%
-                        margin-left: auto
-                        margin-right: auto
+                        // height: 100%
+                        display: grid
+                        grid-template-columns: 45% 45%
+                        column-gap: 10%
 
-                        input
+.slide-container
+    background-color: snow
+    text-align: center
+    border: 1px solid rgba(0, 0, 0, 0.25)
+    border-radius: 5px
+    box-shadow: 1px 1px 2px
+    margin-bottom: 10px
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+    position: relative
 
-                        textarea
-                            margin-top: 10px
-                            height: 100px
-                            width: 80%
-                            min-width: 80%
-                            max-width: 80%
-                            text-align: center
-                            overflow: scroll
-                            resize: none
-                            margin-bottom: 5px
+    input
+
+    textarea
+        margin-top: 10px
+        height: 100px
+        width: 80%
+        min-width: 80%
+        max-width: 80%
+        overflow: scroll
+        resize: none
+        margin-bottom: 5px
+
+.delete-x
+    position: absolute
+    top: 5px
+    right: 10px
+    font-size: 8pt
+    z-index: 4
+
+.delete-x:hover
+    cursor: pointer
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import arrayMove from 'array-move';
 import SortableContainer from '../components/SortableContainer.js'
 import Section from './Section.js'
@@ -16,6 +16,8 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     const [nextSlide, setNextSlide] = useState(0)
 
     const history = useHistory()
+
+    const slideFormContainer = useRef(null)
 
     //onSortEnds for react-sortable-hoc
 
@@ -209,15 +211,21 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
 
     return(
 
-        <Fragment>
-            <input type="date" value={serviceDate} onChange={e => {setServiceDate(e.target.value)}} />
-            <SortableContainer onSortEnd={onSectionSortEnd} useDragHandle>
+        <div className="slide-form-wrapper" ref={slideFormContainer}>
+            <div className="section-date-wrapper">
+                Service Date<br />
+                <input type="date" value={serviceDate} onChange={e => {setServiceDate(e.target.value)}} />
+            </div>
+            <SortableContainer onSortEnd={onSectionSortEnd} lockAxis="y" helperContainer={slideFormContainer.current}>
                 {sections ? populateSections() : "loading..."}
             </SortableContainer>
-            <button onClick={onAddSection}>Add new section</button>
-            <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
+            <div className="slide-button-wrapper">
+
+                <button className="new-section-button" onClick={onAddSection}>Add new section</button>
+                <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
+            </div>
             {serviceId ? <button onClick={handleDelete}>Delete Service</button> : null}
-        </Fragment>
+        </div>
 
     )
 }

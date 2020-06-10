@@ -1,3 +1,16 @@
+li
+    list-style: none
+    margin: 0
+
+ul
+    margin: 0
+
+input
+    font-family: Tahoma, Geneva, sans-serif
+
+textarea
+    font-family: Tahoma, Geneva, sans-serif
+    
 .admin-panel-container
     background-image: linear-gradient(to top left, rgba(113, 214, 184, 1), rgba(251, 254, 253, 1))
     position: fixed
@@ -5,6 +18,7 @@
     bottom: 0
     left: 0
     right: 0
+    overflow: scroll
 
     .login-wrapper
         position: absolute
@@ -134,7 +148,6 @@
                         background-color: grey
                         border: 2px solid grey
 
-
                 .new-service-button
                     display: block
                     margin-top: 10px
@@ -146,9 +159,98 @@
                     transition: background-color 500ms
                     width: 100px
 
-
                 .new-service-button:active
                     background-color: snow
                     color: rgba(118, 194, 95, 1)
-            
-        
+
+        .slide-form-wrapper
+            width: 100%    
+            height: 100%
+            display: grid
+            grid-template-columns: 100%
+            grid-template-rows: 50px auto
+            align-items: center
+
+            .section-date-wrapper
+                width: 100%
+                text-align: center
+
+            .slide-button-wrapper
+                width: 80%
+                text-align: right
+
+
+                button
+                    width: 125px
+                    margin-left: 5px
+                    margin-right: 5px
+                    margin-bottom: 100px
+
+            ul
+                padding-left: 0
+                list-style: none
+
+            .section-container
+                background-color: snow
+                width: 60%  
+                margin-left: auto            
+                margin-right: auto
+                min-height: 200px
+                border: 2px solid black
+                border-radius: 20px
+                margin-top: 10px
+                margin-bottom: 10px
+
+                .section-grid
+                    display: grid
+                    grid-template-rows: 40px auto
+                    min-height: 200px
+                    width: 90%
+                    margin-left: auto
+                    margin-right: auto
+                    margin-top: 20px
+                    margin-bottom: 20px
+
+                    .section-header
+                        text-align: center
+                        width: 100%
+
+                        .section-title-input
+                            width: 150px
+                            height: 1rem
+                            margin-top: 0%
+                            margin-left: auto
+                            margin-right: auto
+
+                    .add-slide-button
+                        width: 100px
+
+                .slide-wrapper
+                    width: 40%
+                    margin-left: auto
+                    margin-right: auto
+
+                    .slide-container
+                        background-color: snow
+                        text-align: center
+                        border: 1px solid rgba(0, 0, 0, 0.25)
+                        border-radius: 5px
+                        box-shadow: 1px 1px 2px
+                        margin-bottom: 10px
+                        width: 100%
+                        margin-left: auto
+                        margin-right: auto
+
+                        input
+
+                        textarea
+                            margin-top: 10px
+                            height: 100px
+                            width: 80%
+                            min-width: 80%
+                            max-width: 80%
+                            text-align: center
+                            overflow: scroll
+                            resize: none
+                            margin-bottom: 5px
+

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {sortableElement} from 'react-sortable-hoc';
 import Slide from '../components/Slide.js';
-import DragHandle from '../components/DragHandle.js';
 import SortableContainer from '../components/SortableContainer.js'
 
 const Section = sortableElement(({
@@ -14,6 +13,8 @@ const Section = sortableElement(({
     onSlideContentChange,
     onAddSlide
     }) => {
+
+    const slideWrapper = useRef(null)
 
     const populateSlides = () => {
         return slides.map((slide, index) => {
@@ -31,12 +32,22 @@ const Section = sortableElement(({
 
     return(
         <li>
-            <DragHandle />
-            <input type="text" placeholder="Section Title" value={title} onChange={e => onSectionTitleChange(e, id)} />
-            <SortableContainer onSortEnd={(sortParams) => onSlideSortEnd(sortParams, id)} useDragHandle>
-                {slides ? populateSlides() : "loading..."}
-            </SortableContainer>
-            <button onClick={(e) => onAddSlide(id)} >Add Slide</button>
+            <div className="section-container">
+                <div className="section-grid">
+                    <div className="section-header">
+
+                        {/* <label>Section Title</label><br /> */}
+                        <input className="section-title-input" type="text" placeholder="Section Title" value={title} onChange={e => onSectionTitleChange(e, id)} />
+                    </div>
+                    <div className="slide-wrapper" ref={slideWrapper}>
+
+                    <SortableContainer onSortEnd={(sortParams) => onSlideSortEnd(sortParams, id)} lockAxis="y" helperContainer={slideWrapper.current}>
+                        {slides ? populateSlides() : "loading..."}
+                    </SortableContainer>
+                    </div>
+                    <button className="add-slide-button" onClick={(e) => onAddSlide(id)} >Add Slide</button>
+                </div>
+            </div>
         </li>
     )
 

@@ -96,7 +96,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
         setSections([
             ...sections.map(section => {
                 if (section.id == sectionId) {
-                    return {section, slides: [...section.slides.filter(slide => {
+                    return {...section, slides: [...section.slides.filter(slide => {
                         return slide.id !== slideId
                     })]}
                 }

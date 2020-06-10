@@ -37,6 +37,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     //populates sections based on state
 
     const populateSections = () => {
+
         return sections.map((section, index) => {
             return <Section
                 key={`section-${section.id}`} 
@@ -48,6 +49,8 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                 onSlideContentChange={onSlideContentChange}
                 onSlideSortEnd={onSlideSortEnd}
                 onAddSlide={onAddSlide}
+                onDeleteSlide={onDeleteSlide}
+                onDeleteSection={onDeleteSection}
                 />
         })
     }
@@ -86,6 +89,30 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
         ])
         setNextSlide(nextSlide + 1)
     }
+
+    // Delete sections and slides
+
+    const onDeleteSlide = (sectionId, slideId) => {
+        setSections([
+            ...sections.map(section => {
+                if (section.id == sectionId) {
+                    return {section, slides: [...section.slides.filter(slide => {
+                        return slide.id !== slideId
+                    })]}
+                }
+                return section
+            })
+        ])
+    }
+
+    const onDeleteSection = (sectionId) => {
+        setSections([
+            ...sections.filter(section => {
+                return section.id !== sectionId
+            })
+        ])
+    }
+
 
     //controlled forms
 
@@ -167,8 +194,11 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             headers: {...HEADERS, Authorization: `Bearer ${localStorage.getItem("token")}`}
         })
         const json = await response.json()
-        history.push('/admin')
-        console.log(json)
+        if (json.error) {
+            console.log(json)
+        } else {
+            history.push('/admin')
+        }
     }
 
     //initial fetch for editing
@@ -216,14 +246,14 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                 Service Date<br />
                 <input type="date" value={serviceDate} onChange={e => {setServiceDate(e.target.value)}} />
             </div>
-            <SortableContainer onSortEnd={onSectionSortEnd} lockAxis="y" helperContainer={slideFormContainer.current}>
+            <SortableContainer onSortEnd={onSectionSortEnd} lockAxis="y" helperContainer={slideFormContainer.current} distance="1">
                 {sections ? populateSections() : "loading..."}
             </SortableContainer>
             <div className="slide-button-wrapper">
 
                 <button className="new-section-button" onClick={onAddSection}>Add new section</button>
                 <button onClick={handleSubmit}>{serviceId ? "Update Service" : "Create Service"}</button>
-                {serviceId ? <button onClick={handleDelete}>Delete Service</button> : null}
+                {serviceId ? <button className="delete-button" onClick={handleDelete}>Delete Service</button> : null}
             </div>
         </div>
 

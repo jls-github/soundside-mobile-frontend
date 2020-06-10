@@ -11,7 +11,9 @@ const Section = sortableElement(({
     onSlideSortEnd,
     onSlideTitleChange,
     onSlideContentChange,
-    onAddSlide
+    onAddSlide,
+    onDeleteSection,
+    onDeleteSlide
     }) => {
 
     const slideWrapper = useRef(null)
@@ -26,14 +28,20 @@ const Section = sortableElement(({
                 content={slide.content}
                 onSlideTitleChange={(e, slideId) => onSlideTitleChange(e, id, slideId)}
                 onSlideContentChange={(e, slideId) => onSlideContentChange(e, id, slideId)} 
+                onDeleteSlide={onDeleteSlideHandler}
             />
         })
+    }
+
+    const onDeleteSlideHandler = (slideId) => {
+        onDeleteSlide(id, slideId)
     }
 
     return(
         <li>
             <div className="section-container">
                 <div className="section-grid">
+                    <div onClick={(e) => onDeleteSection(id)} className="delete-x">x</div>
                     <div className="section-header">
 
                         {/* <label>Section Title</label><br /> */}
@@ -41,7 +49,7 @@ const Section = sortableElement(({
                     </div>
                     <div className="slide-wrapper" ref={slideWrapper}>
 
-                    <SortableContainer onSortEnd={(sortParams) => onSlideSortEnd(sortParams, id)} lockAxis="y" helperContainer={slideWrapper.current}>
+                    <SortableContainer onSortEnd={(sortParams) => onSlideSortEnd(sortParams, id)} axis="xy" helperContainer={slideWrapper.current} distance="1">
                         {slides ? populateSlides() : "loading..."}
                     </SortableContainer>
                     </div>

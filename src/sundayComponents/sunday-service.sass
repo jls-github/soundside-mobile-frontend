@@ -29,12 +29,17 @@
         transition: opacity 400ms ease-in
 
     .sunday-service-background
-        background-image: linear-gradient(to top left, rgba(113, 214, 184, 1), rgba(251, 254, 253, 1))
+        background-image: linear-gradient(to top left, rgba(113, 214, 184, 1), rgba(251, 254, 253, 0.3))
         height: 100%
         width: 100%
         position: absolute
         z-index: -1
-        opacity: 0.5
+
+    .sunday-service-picture
+        position: fixed
+        height: 100%
+        z-index: -2
+        opacity: 0.35
 
     .top-navbar
         position: absolute
@@ -154,10 +159,11 @@
 
             .services-header
                 display: block
-                font-size: 2rem
+                font-size: 1.5rem
                 border-top: solid 1px rgba(0, 0, 0, .25)
                 border-bottom: solid 1px rgba(0, 0, 0, .25)
                 margin-bottom: 10%
+                font-family: Snell Roundhand, cursive
                 @media (min-width: 600px)
                     margin-bottom: 20px
 
@@ -200,7 +206,7 @@
 
                     .service
                         height: 6rem
-                        width: 75%
+                        width: 90%
                         overflow: hidden
                         background-color: black
                         border-radius: 2px
@@ -208,6 +214,8 @@
                         margin: 0
                         align-items: center
                         display: flex
+                        align-items: center
+                        justify-content: center
                         border: solid 1px
                         box-shadow: 1px 1px 1px black 
                         position: relative
@@ -217,22 +225,19 @@
                             width: 400px
 
                         img
+                            position: absolute
                             max-width: 100%
                             width: 100%
-                            opacity: 0.5
+                            opacity: 0.3
                             overflow: hidden
 
                         .service-lettering
-                            position: absolute
-                            background-color: rgba(0, 0, 0, 0.95)
                             color: white
-                            bottom: 0
-                            right: 0
-                            padding-left: 2%
-                            padding-right: 2%
                             font-size: 1.65rem
-                            opacity: 0.9
-                            white-space: nowrap
+                            opacity: 1
+                            z-index: 1
+                            border-top: 1px solid white
+                            border-bottom: 1px solid white
                             
         .slide-container
             position: absolute

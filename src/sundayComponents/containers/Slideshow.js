@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom'
+import {useSwipeable} from 'react-swipeable'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {APIROOT} from '../../constraints/index.js'
 import Slide from '../components/Slide.js'
@@ -12,6 +13,11 @@ const Slideshow = ({serviceId}) => {
     const [activeSlide, setActiveSlide] = useState(null)
 
     const history = useHistory()
+
+    const handlers = useSwipeable({
+        onSwipedLeft: (e) => onNextSlide(),
+        onSwipedRight: (e) => onPreviousSlide()
+    })
     
     const onNextSlide = () => {
         if (activeIndex < slideLength - 2) {
@@ -54,7 +60,7 @@ const Slideshow = ({serviceId}) => {
     })
 
     return(
-        <div className="slide-container">
+        <div className="slide-container" {...handlers}>
             <ReactCSSTransitionGroup
                 transitionName="slide"
                 transitionEnterTimeout={700}

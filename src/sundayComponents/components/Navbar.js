@@ -43,11 +43,15 @@ const Navbar = () => {
                     <img className="navbar-logo" src={Logo} alt="Soundside Church"/>
                 </div>
                 <div className="navbar navbar-inactive" ref={navRef}>
-                    <div className="navbar-header">Menu</div>
-                    <ul className="navbar-list" >
-                        <li onClick={handleNavbarSlide}><Link to="/church" >Services</Link></li>
-                        <li onClick={handleNavbarSlide}><a href="https://soundsidechurch.com/discover.html">About Us</a></li>
-                    </ul>
+                    <div className="navbar-gradient">
+
+                        <div className="navbar-header">Menu</div>
+                        <ul className="navbar-list" >
+                            <li onClick={handleNavbarSlide}><Link to="/church" >Services</Link></li>
+                            <li onClick={handleNavbarSlide}><a href="https://soundsidechurch.com/discover.html">About Us</a></li>
+                        </ul>
+                        <div className="navbar-footer">Engaging Others with the Love of Christ That They Might Enjoy New Life in Christ</div>
+                    </div>
                 </div>
             </div>
         </Fragment>

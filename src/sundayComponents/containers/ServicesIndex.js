@@ -25,7 +25,7 @@ const ServicesIndex = (props) => {
 
     return(
         <div className="services-index">
-            <div className="services-header">Soli Deo Gloria</div>
+            <div className="services-header">Engaging Others with the Love of Christ<br />That they might find new life in Christ</div>
             <div className="services-list">
                 {services ? populateServices() : "loading..."}
             </div>

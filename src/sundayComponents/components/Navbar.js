@@ -1,4 +1,5 @@
 import React, {useRef, useState, Fragment, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Logo from '../../images/soundside-logo.png'
 import {Link} from 'react-router-dom'
@@ -9,8 +10,14 @@ const Navbar = () => {
 
     const navRef = useRef(null)
 
+    const history = useHistory()
+
     const handleNavbarSlide = () => {
         setNavBarActive(!navBarActive)
+    }
+
+    const handleLogoClick = () => {
+        history.push('/church')
     }
     
     useEffect(() => {
@@ -40,7 +47,7 @@ const Navbar = () => {
                         <li></li>
                         <li></li>
                     </ul>
-                    <img className="navbar-logo" src={Logo} alt="Soundside Church"/>
+                    <img className="navbar-logo" src={Logo} alt="Soundside Church" onClick={e => handleLogoClick()}/>
                 </div>
                 <div className="navbar navbar-inactive" ref={navRef}>
                     <div className="navbar-gradient">

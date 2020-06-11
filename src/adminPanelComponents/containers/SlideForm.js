@@ -12,8 +12,6 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
 
     const [sections, setSections] = useState(null)
     const [serviceDate, setServiceDate] = useState("")
-    const [nextSection, setNextSection] = useState(0)
-    const [nextSlide, setNextSlide] = useState(0)
 
     const history = useHistory()
 
@@ -61,17 +59,15 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
         setSections([
             ...sections, {
             title: "",
-            id: nextSection,
+            id: Math.floor(Math.random() * Math.floor(10000)),
             slides: [
                 {
                     title: "",
                     content: "",
-                    id: nextSlide
+                    id: Math.floor(Math.random() * Math.floor(10000))
                 }
             ]
         }])
-        setNextSection(nextSection + 1)
-        setNextSlide(nextSlide + 1)
     }
 
     const onAddSlide = (sectionId) => {
@@ -81,13 +77,12 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                     return {...section, slides: [...section.slides, {
                         title: "",
                         content: "",
-                        id: nextSlide
+                        id: Math.floor(Math.random() * Math.floor(10000))
                     }]}
                 }
                 return section
             })
         ])
-        setNextSlide(nextSlide + 1)
     }
 
     // Delete sections and slides
@@ -212,12 +207,19 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
                     history.push('/admin')
                 } else {
                     let json = await response.json()
-                    await setServiceDate(json.date)
-                    await setSections(json.sections)
-                    await setNextSection(json.sections[json.sections.length - 1].id + 1)
-                    await setNextSlide(Math.max(...json.sections.map(section => {
-                        return section.slides.map(slide => slide.id)
-                    }).flat()) + 1)
+                    setServiceDate(json.date)
+                    setSections(json.sections.map(section => {
+                        return {
+                            ...section,
+                            id: Math.floor(Math.random() * Math.floor(10000)),
+                            slides: section.slides.map(slide => {
+                                return {
+                                    ...slide,
+                                    id: Math.floor(Math.random() * Math.floor(10000))
+                                }
+                            })
+                        }
+                    }))
                 }
             }
             fetchService()
@@ -225,17 +227,15 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
             setSections([
                 {
                 title: "",
-                id: nextSection,
+                id: Math.floor(Math.random() * Math.floor(10000)),
                 slides: [
                     {
                         title: "",
                         content: "",
-                        id: nextSlide
+                        id: Math.floor(Math.random() * Math.floor(10000))
                     }
                 ]
             }])
-            setNextSection(nextSection + 1)
-            setNextSlide(nextSlide + 1)
         }
     }, [history, serviceId])
 

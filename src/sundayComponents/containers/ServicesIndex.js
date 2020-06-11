@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react'
-import {APIROOT} from '../../constraints/index.js'
+import React from 'react'
 import Service from '../components/Service.js'
 
 const ServicesIndex = (props) => {

@@ -40,7 +40,18 @@ const Slideshow = ({serviceId}) => {
                 history.push('/church')
             } else {
                 let json = await response.json()
-                setService(json.sections)
+                setService(json.sections.map(section => {
+                    return {
+                        ...section, 
+                        id: Math.floor(Math.random() * Math.floor(100000)),
+                        slides: section.slides.map(slide => {
+                            return {
+                                ...slide,
+                                id: Math.floor(Math.random() * Math.floor(100000))
+                            }
+                        })
+                    }
+                }))
             }
         }
         fetchService()

@@ -88,7 +88,7 @@
         z-index: 5
         // background-image: linear-gradient(rgba(181, 219, 223, 1) 1, rgba(161, 209, 215, 1) 1)
         text-align: center
-        color: white
+        color: black
         background-color: white // can change to background image
 
         .navbar-gradient
@@ -115,6 +115,12 @@
             margin-right: 5%
             margin-bottom: 5%
 
+        .navbar-footer::before
+            content: '"'
+
+        .navbar-footer::after
+            content: '"'
+
         .navbar-list
             padding-left: 0
             text-align: left
@@ -130,7 +136,7 @@
 
                 a
                     text-decoration: none
-                    color: #3f3f31
+                    color: black
                     font-size: 1.75rem
 
                 a:active
@@ -154,7 +160,7 @@
         height: 0%
         right: 0
         top: 0
-        background-color: white
+        background-color: rgba(255, 255, 255, 0.4)
         z-index: 6
         animation: 600ms ease-in-out navbar-header-close
 
@@ -177,7 +183,7 @@
         height: 100%
         right: 0
         top: 0
-        background-color: white
+        background-color: rgba(255, 255, 255, 0.4)
         z-index: 6
         animation: 600ms ease-in-out navbar-header
 
@@ -378,10 +384,10 @@
                     height: 50px
                     margin-left: 10%
                     border-radius: 50px
-                    background: rgba(118, 194, 95, 1)
+                    background: rgba(118, 194, 95, 0.75)
                     color: white
                     font-size: 2rem
-                    box-shadow: 0
+                    box-shadow: 0px 0px 2px black
                     border: solid grey 1px
                     padding: 0
 
@@ -393,10 +399,10 @@
                     height: 50px
                     margin-right: 10%
                     border-radius: 50px
-                    background: rgba(118, 194, 95, 1)
+                    background: rgba(118, 194, 95, 0.75)
                     color: white
                     font-size: 2rem
-                    box-shadow: 0
+                    box-shadow: 0px 0px 2px black
                     border: solid grey 1px
                     padding: 0
 

@@ -50,7 +50,7 @@ const Navbar = () => {
                             <li onClick={handleNavbarSlide}><Link to="/church" >Services</Link></li>
                             <li onClick={handleNavbarSlide}><a href="https://soundsidechurch.com/discover.html">About Us</a></li>
                         </ul>
-                        <div className="navbar-footer">Engaging Others with the Love of Christ That They Might Enjoy New Life in Christ</div>
+                        <div className="navbar-footer">Engaging Others<br />with the Love of Christ<br />That They Might Enjoy<br />New Life in Christ</div>
                     </div>
                 </div>
             </div>

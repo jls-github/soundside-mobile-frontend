@@ -80,15 +80,6 @@
                 right: 40px      
                 max-height: 75%  
 
-    .navbar::before
-        content: ""
-        position: absolute
-        width: 3px
-        height: 100%
-        right: 0
-        background-color: white
-        z-index: 6
-
     .navbar
         display: block
         position: absolute
@@ -97,7 +88,7 @@
         z-index: 5
         // background-image: linear-gradient(rgba(181, 219, 223, 1) 1, rgba(161, 209, 215, 1) 1)
         text-align: center
-        color: black
+        color: white
         background-color: white // can change to background image
 
         .navbar-gradient
@@ -139,7 +130,7 @@
 
                 a
                     text-decoration: none
-                    color: black
+                    color: #3f3f31
                     font-size: 1.75rem
 
                 a:active
@@ -156,6 +147,17 @@
             left: -25%
             width: 25%
 
+    .navbar-inactive::before
+        content: ""
+        position: absolute
+        width: 3px
+        height: 0%
+        right: 0
+        top: 0
+        background-color: white
+        z-index: 6
+        animation: 600ms ease-in-out navbar-header-close
+
     .navbar-active
         transition: 1s
         left: 0px
@@ -167,6 +169,17 @@
         @media (max-width: 600px)
             left: 0%
             width: 60%
+
+    .navbar-active::before
+        content: ""
+        position: absolute
+        width: 3px
+        height: 100%
+        right: 0
+        top: 0
+        background-color: white
+        z-index: 6
+        animation: 600ms ease-in-out navbar-header
 
 
     .main-content-container
@@ -398,3 +411,15 @@
         opacity: 0
     100%
         opacity: 0.3
+
+@keyframes navbar-header
+    0%
+        height: 0%
+    100%
+        height: 100%
+
+@keyframes navbar-header-close
+    0%
+        height: 100%
+    100%
+        height: 0%

@@ -62,8 +62,8 @@ const Slideshow = ({serviceId}) => {
                     {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} /> : null }
             </ReactCSSTransitionGroup>
             <div className="slide-buttons">
-                <button className="left-button" onClick={onPreviousSlide}>{"<"}</button>
-                <button className="right-button" onClick={onNextSlide}>{">"}</button>
+                <button className="left-button" onClick={onPreviousSlide}><div className="button-overlay">{"<"}</div></button>
+                <button className="right-button" onClick={onNextSlide}><div className="button-overlay">{">"}</div></button>
             </div>
         </div>
     )

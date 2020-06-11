@@ -5,6 +5,7 @@
     left: 0
     right: 0
     display: block
+    overflow: hidden
 
     .navbar-screen-overlay
         background-color: black
@@ -297,17 +298,15 @@
                     margin-bottom: 10%
                     @media (min-width: 600px)
                         margin-bottom: 20px
-                    @media (max-height: 425px)
+                    @media (max-height: 600px)
                         margin-bottom: 10px
-                        font-size: 1.35rem
+                        font-size: 1.15rem
 
                 .slide-content
                     line-height: 2
                     font-size: 1.35rem
                     white-space: pre-line
-                    @media (max-height: 425px)
-                        font-size: 1.15rem
-                    @media (max-height: 376px)
+                    @media (max-height: 600px)
                         font-size: 1rem
 
             .slide-enter

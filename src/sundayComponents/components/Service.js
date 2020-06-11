@@ -1,33 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Gathering from '../../images/gathering.jpg'
 import {useHistory} from 'react-router-dom'
+import {APIROOT} from '../../constraints/index.js'
 
-const Service = (props) => {
+const Service = () => {
 
-    const {date, id} = props
+    const [id, setId] = useState()
+    const [active, setActive] = useState(false)
 
-    const formattedDate = () => {
-        const splitDate = date.split(" ")
+    useEffect(() => { // this still needs to change - the backend should only send the most recent service
 
-        const month = splitDate[0]
-        const day = splitDate[2] ? splitDate[2] : splitDate[1]
-        return (
-            <div className="service-date">
-                {month} <br />
-                {day}
-            </div>
-        )
-    }
+        async function fetchServices() {
+            let response = await fetch(APIROOT + '/services')
+            let json = await response.json()
+            setId(json[0].id)
+            setActive(true)
+        }
+
+        fetchServices()
+    }, [])
 
     const history = useHistory()
 
     const onSelectService = () => {
-        history.push(`/church/${id}`)
+        if (active) {
+            history.push(`/church/${id}`)
+        } 
     }
 
     return (
         <div className="service-line">
-            <div className="service-date-box">{formattedDate()}</div>
                 <div className="service" onClick={onSelectService}>
                     <img src={Gathering}/>
                     <div className="service-lettering">Worship Guide</div>

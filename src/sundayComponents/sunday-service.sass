@@ -242,7 +242,7 @@
                         height: 6rem
                         width: 90%
                         overflow: hidden
-                        background-color: rgba(0, 0, 0, 1)
+                        background-color: rgba(120, 162, 193, 1)
                         border-radius: 2px
                         padding: 0
                         margin: 0
@@ -256,6 +256,7 @@
                         position: relative
                         margin-left: auto
                         margin-right: auto
+                        animation: 1s ease-in service-wrapper
                         @media (min-width: 600px)
                             width: 400px
 
@@ -268,7 +269,7 @@
                             animation: 1s ease-in service-picture
 
                         .service-lettering
-                            color: white
+                            color: black
                             font-size: 1.65rem
                             opacity: 1
                             z-index: 1
@@ -280,7 +281,7 @@
                             position: absolute
                             top: 0
                             right: 0
-                            background-color: white
+                            background-color: black
                             width: 100%
                             z-index: 1
                             animation: 1s ease-in service-border
@@ -291,7 +292,7 @@
                             position: absolute
                             bottom: 0
                             left: 0
-                            background-color: white
+                            background-color: black
                             height: 1px
                             width: 100%
                             animation: 1s ease-in service-border
@@ -411,6 +412,12 @@
         opacity: 0
     100%
         opacity: 0.3
+
+@keyframes service-wrapper
+    0%
+        opacity: 0
+    100%
+        opacity: 1
 
 @keyframes navbar-header
     0%

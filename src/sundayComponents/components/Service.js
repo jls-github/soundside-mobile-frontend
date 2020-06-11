@@ -30,7 +30,7 @@ const Service = (props) => {
             <div className="service-date-box">{formattedDate()}</div>
                 <div className="service" onClick={onSelectService}>
                     <img src={Gathering}/>
-                    <div className="service-lettering">Sunday Service</div>
+                    <div className="service-lettering">Worship Guide</div>
                 </div>
         </div>
     )

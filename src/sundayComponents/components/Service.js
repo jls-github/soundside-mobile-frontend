@@ -8,13 +8,17 @@ const Service = () => {
     const [id, setId] = useState()
     const [active, setActive] = useState(false)
 
-    useEffect(() => { // this still needs to change - the backend should only send the most recent service
+    useEffect(() => {
 
         async function fetchServices() {
-            let response = await fetch(APIROOT + '/services')
+            let response = await fetch(APIROOT + '/current_service')
             let json = await response.json()
-            setId(json[0].id)
-            setActive(true)
+            if (json.error) {
+                console.log(json.error) // could use a further action here
+            } else {
+                setId(json.id)
+                setActive(true)
+            }
         }
 
         fetchServices()

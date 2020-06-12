@@ -361,7 +361,26 @@ button:focus
         border: none
         text-align: center
 
-    textarea::placeholder
+    textarea::-webkit-scrollbar
+    display: none
+
+    textarea::-webkit-scrollbar-button
+        display: none
+
+    textarea::-webkit-scrollbar-track
+        display: none
+
+    textarea::-webkit-scrollbar-track-piece
+        display: none
+
+    textarea::-webkit-scrollbar-thumb
+        display: none
+
+    textarea::-webkit-scrollbar-corner
+        display: none
+
+    textarea::-webkit-resizer  
+        display: none
 
 .delete-x
     position: absolute

@@ -20,7 +20,7 @@ const Slideshow = ({serviceId}) => {
     })
     
     const onNextSlide = () => {
-        if (activeIndex < slideLength - 2) {
+        if (activeIndex < slideLength - 1) {
             setActiveIndex(activeIndex + 1)
         }
     }

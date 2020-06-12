@@ -337,8 +337,23 @@ body
                 @media (max-height: 425px)
                     top: 20px
 
-            // .slide::-webkit-scrollbar
-            //     display: none
+                .slide-title
+                    font-size: 2rem
+                    margin-bottom: 10%
+                    font-weight: bold
+                    @media (min-width: 600px)
+                        margin-bottom: 20px
+                    @media (max-height: 600px)
+                        margin-bottom: 10px
+                        font-size: 1.15rem
+
+                .slide-content
+                    line-height: 2
+                    font-size: 1.35rem
+                    white-space: pre-line
+                    @media (max-height: 600px)
+                        font-size: 1rem
+
 
             .slide::-webkit-scrollbar-button
                 display: none
@@ -358,22 +373,6 @@ body
             .slide::-webkit-resizer  
                 display: none
 
-                .slide-title
-                    font-size: 2rem
-                    margin-bottom: 10%
-                    font-weight: bold
-                    @media (min-width: 600px)
-                        margin-bottom: 20px
-                    @media (max-height: 600px)
-                        margin-bottom: 10px
-                        font-size: 1.15rem
-
-                .slide-content
-                    line-height: 2
-                    font-size: 1.35rem
-                    white-space: pre-line
-                    @media (max-height: 600px)
-                        font-size: 1rem
 
             .slide-enter
                 opacity: 0.01

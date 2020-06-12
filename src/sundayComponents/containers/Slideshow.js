@@ -74,8 +74,8 @@ const Slideshow = ({serviceId}) => {
         <div className="slide-container" {...handlers}>
             <ReactCSSTransitionGroup
                 transitionName="slide"
-                transitionEnterTimeout={700}
-                transitionLeaveTimeout={700}>
+                transitionEnterTimeout={300}
+                transitionLeaveTimeout={300}>
                     {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} /> : null }
             </ReactCSSTransitionGroup>
             <div className="slide-buttons">

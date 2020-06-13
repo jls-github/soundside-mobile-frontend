@@ -402,7 +402,7 @@ body
                 top: 90%
                 left: 0
                 right: 0
-                justify-content: space-between
+                justify-content: center
                 width: 100%
                 padding: 0
                 margin: 0
@@ -414,12 +414,14 @@ body
                     display: flex
                     justify-content: center
                     align-items: center
+                    position: absolute
 
                     div
-                        height: 3px
-                        width: 3px
+                        height: 5px
+                        width: 5px
                         background: lightgrey
                         border-radius: 50px
+                        margin: 5px
 
                 .left-button
                     display: inline
@@ -435,11 +437,13 @@ body
                     padding: 0
                     border: none
                     margin: 0
+                    display: none
                     // @media (max-width: 1223px)
                     //     display: none
 
                     .left-button:active
                         background: white
+                        display: none
 
                 .right-button
                     display: inline
@@ -455,11 +459,13 @@ body
                     padding: 0
                     border: none
                     margin: 0
+                    display: none
                     // @media (max-width: 1223px)
                         // display: none
 
                     .right-button:active
                         background: white
+                        display: none
 
                 // .button-overlay
                 //     height: 100%

@@ -80,7 +80,7 @@ const Slideshow = ({serviceId}) => {
             </ReactCSSTransitionGroup>
             <div className="slide-buttons">
                 <button className="left-button" onClick={onPreviousSlide}><div className="button-overlay">{"<"}</div></button>
-                <span>Follow along by sliding
+                <span>Follow along by sliding<br />
                     Or pressing the buttons
                 </span>
                 <button className="right-button" onClick={onNextSlide}><div className="button-overlay">{">"}</div></button>

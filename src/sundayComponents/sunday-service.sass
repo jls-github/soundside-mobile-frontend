@@ -384,21 +384,17 @@ body
 
             .slide-enter
                 opacity: 0.01
-                right: 10%
 
             .slide-enter.slide-enter-active
                 opacity: 1
-                right: -3rem
-                transition: opacity 300ms ease-in, right 300ms ease-in
+                transition: opacity 300ms ease-in
 
             .slide-leave
                 opacity: 1
-                left: 10%
 
             .slide-leave.slide-leave-active
                 opacity: 0.01
-                left: -3rem
-                transition: opacity 300ms ease-in, left 300ms ease-in
+                transition: opacity 300ms ease-in
 
             .slide-buttons
                 position: sticky
@@ -415,6 +411,9 @@ body
 
                 span
                     bottom: 0
+                    display: flex
+                    justify-content: center
+                    align-items: center
 
                     div
                         height: 3px

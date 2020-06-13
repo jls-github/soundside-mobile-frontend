@@ -384,17 +384,21 @@ body
 
             .slide-enter
                 opacity: 0.01
+                right: auto
 
             .slide-enter.slide-enter-active
                 opacity: 1
-                transition: opacity 300ms ease-in
+                right: 0
+                transition: opacity 300ms ease-in, right 300ms ease-in
 
             .slide-leave
                 opacity: 1
+                left: auto
 
             .slide-leave.slide-leave-active
                 opacity: 0.01
-                transition: opacity 300ms ease-in
+                left: 0
+                transition: opacity 300ms ease-in, left 300ms ease-in
 
             .slide-buttons
                 position: sticky

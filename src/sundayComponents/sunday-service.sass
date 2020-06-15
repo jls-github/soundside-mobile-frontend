@@ -382,20 +382,6 @@ body
                 display: none
 
 
-            .slide-enter
-                opacity: 0.01
-
-            .slide-enter.slide-enter-active
-                opacity: 1
-                transition: opacity 300ms ease-in
-
-            .slide-leave
-                opacity: 1
-
-            .slide-leave.slide-leave-active
-                opacity: 0.01
-                transition: opacity 300ms ease-in
-
             .slide-buttons
                 position: sticky
                 display: flex
@@ -477,6 +463,49 @@ body
                 //     justify-content: center
                 //     @media (max-width: 1223px)
                 //         display: none
+        .next-slide-enter
+            left: 101%
+            opacity: 1
+
+        .next-slide-enter.next-slide-enter-active
+            left: 5%
+            opacity: 1
+            transition: left 1s ease-in, opacity 800ms ease-in
+
+        .next-slide-leave
+            right: 5%
+            left: 5%
+            opacity: 1
+
+        .next-slide-leave.next-slide-leave-active
+            opacity: 0
+            right: 101%
+            left: auto
+            transition: right 1s ease-in, left 1s ease-in, opacity 800ms ease-in
+
+
+        .prev-slide-enter
+            right: 101%
+            opacity: 1
+            left: auto
+
+        .prev-slide-enter.prev-slide-enter-active
+            right: 5%
+            left: auto
+            opacity: 1
+            transition: right 1s ease-in, left 1s ease-in, opacity 800ms ease-in
+
+        .prev-slide-leave
+            right: 5%
+            left: 5%
+            opacity: 1
+
+        .prev-slide-leave.prev-slide-leave-active
+            left: 101%
+            right: auto
+            opacity: 0
+            transition: right 1s ease-in, left 1s ease-in, opacity 800ms ease-in
+
 
 @keyframes service-border
     0%

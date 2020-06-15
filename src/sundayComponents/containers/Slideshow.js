@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom'
-import {useSwipeable} from 'react-swipeable'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {APIROOT} from '../../constraints/index.js'
 import Slide from '../components/Slide.js'
@@ -11,22 +10,21 @@ const Slideshow = ({serviceId}) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const [slideLength, setSlideLength] = useState(0)
     const [activeSlide, setActiveSlide] = useState(null)
+    const [swipeDirection, setSwipeDirection] = useState("forward")
+
 
     const history = useHistory()
 
-    const handlers = useSwipeable({
-        onSwipedLeft: (e) => onNextSlide(),
-        onSwipedRight: (e) => onPreviousSlide()
-    })
-    
     const onNextSlide = () => {
         if (activeIndex < slideLength - 1) {
+            setSwipeDirection("forward")
             setActiveIndex(activeIndex + 1)
         }
     }
 
     const onPreviousSlide = () => {
         if (activeIndex > 0) {
+            setSwipeDirection("back")
             setActiveIndex(activeIndex - 1)
         }
     }
@@ -71,20 +69,12 @@ const Slideshow = ({serviceId}) => {
     })
 
     return(
-        <div className="slide-container" {...handlers}>
-            <ReactCSSTransitionGroup
-                transitionName="slide"
-                transitionEnterTimeout={300}
-                transitionLeaveTimeout={300}>
-                    {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} /> : null }
-            </ReactCSSTransitionGroup>
-            <div className="slide-buttons">
-                <button className="left-button" onClick={onPreviousSlide}><div className="button-overlay">{"<"}</div></button>
-                <span><div></div><div></div><div></div>
-                </span>
-                <button className="right-button" onClick={onNextSlide}><div className="button-overlay">{">"}</div></button>
-            </div>
-        </div>
+        <ReactCSSTransitionGroup
+            transitionName={swipeDirection == "forward" ? "next-slide" : "prev-slide"}
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1000}>
+                {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} onNextSlide={onNextSlide} onPreviousSlide={onPreviousSlide}/> : null }
+        </ReactCSSTransitionGroup>
     )
 
 }

@@ -90,7 +90,7 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     const onDeleteSlide = (sectionId, slideId) => {
         setSections([
             ...sections.map(section => {
-                if (section.id == sectionId) {
+                if (section.id === sectionId) {
                     return {...section, slides: [...section.slides.filter(slide => {
                         return slide.id !== slideId
                     })]}

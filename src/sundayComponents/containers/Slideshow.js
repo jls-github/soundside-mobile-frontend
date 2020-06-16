@@ -70,7 +70,7 @@ const Slideshow = ({serviceId}) => {
 
     return(
         <ReactCSSTransitionGroup
-            transitionName={swipeDirection == "forward" ? "next-slide" : "prev-slide"}
+            transitionName={swipeDirection === "forward" ? "next-slide" : "prev-slide"}
             transitionEnterTimeout={1000}
             transitionLeaveTimeout={1000}>
                 {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} onNextSlide={onNextSlide} onPreviousSlide={onPreviousSlide}/> : null }

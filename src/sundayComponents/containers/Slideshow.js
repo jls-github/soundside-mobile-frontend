@@ -107,7 +107,7 @@ const Slideshow = ({serviceId}) => {
         if (!active) {
             setTimeout(() => {
                 setActive(true)
-            }, 1000)
+            }, 600)
         }
     }, [active])
 

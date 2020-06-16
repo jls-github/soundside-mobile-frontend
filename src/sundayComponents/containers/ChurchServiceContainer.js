@@ -4,13 +4,16 @@ import Slideshow from './Slideshow'
 import Navbar from '../components/Navbar'
 import '../sunday-service.sass'
 import BackgroundImage from '../../images/background_image.jpg'
+import ConnectionCard from './ConnectionCard.js';
 
 
 const ChurchServiceContainer = ({location}) => {
 
     const router = () => {
         const path = location.pathname.split("/")
-        if (path[2]) {
+        if (path[2] === "connect")  {
+            return <ConnectionCard />
+        } else if (path[2]) {
             return <Slideshow serviceId={path[2]}/>
         } else {
             return <ServicesIndex />

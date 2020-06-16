@@ -54,8 +54,8 @@ const Navbar = () => {
                         <ul className="navbar-list" >
                             <div className="navbar-header">Engaging Others<br />With the Love of Christ</div>
                             <li onClick={handleNavbarSlide}><Link to="/church" >Services</Link></li>
-                            {/* <li>Connect</li>
-                            <li>Community Groups</li>
+                            <li onClick={handleNavbarSlide}><Link to="/church/connect">Connect</Link></li>
+                            {/* <li>Community Groups</li>
                             <li>Giving</li> */}
                             <li onClick={handleNavbarSlide}><a href="https://soundsidechurch.com/discover.html">About Us</a></li>
                             <div className="navbar-footer">That They Might Enjoy<br />New Life in Christ</div>

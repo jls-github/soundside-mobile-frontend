@@ -552,16 +552,39 @@ body
                 div
                     display: flex
                     align-items: center
+                    height: 1.5rem
+                    margin-bottom: 0.5rem
 
                     input
-                        display: inline
+                        display: block
+                        position: relative
                         width: 1.5rem
                         height: 1.5rem
-                        background: none
-                        box-shadow: none
+                        border: 1px solid black
+
+                    input::after
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        border: 1px solid black
+                        opacity: 1
+                        z-index: 7
+                        background-color: white
+
+                    input:checked::after
+                        content: '\2714'
+                        text-align: center
+                        align-content: center
+                        color: white
+                        background: rgba(118, 194, 95, 1)
 
                     label
-                        display: inline
+                        display: block
+                        height: 1.5rem
+                        margin-left: 0.5rem
 
             .button-wrapper
                 margin-top: 1rem
@@ -571,7 +594,7 @@ body
                 button
                     background-color: rgba(118, 194, 95, 1)
                     color: white
-                    font-size: 1rem
+                    font-size: 1.25rem
 
 
 //keyframes

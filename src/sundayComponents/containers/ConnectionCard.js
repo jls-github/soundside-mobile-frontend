@@ -26,16 +26,24 @@ const ConnectionCard = () => {
     }
 
     const handleCheckbox2Change = () => {
-        setCheckbox2(!checkbox1)
+        setCheckbox2(!checkbox2)
     }
 
     const handleCheckbox3Change = () => {
-        setCheckbox3(!checkbox1)
+        setCheckbox3(!checkbox3)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        //fetch goes here
+        const connection = {
+            name: fullName,
+            email: email,
+            comment: comment,
+            learn_about_jesus: checkbox1,
+            hear_about_church: checkbox2,
+            talk_to_pastor: checkbox3
+        }
+        console.log(connection)
     }
     
     return(

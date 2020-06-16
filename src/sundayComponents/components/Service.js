@@ -35,7 +35,7 @@ const Service = () => {
     return (
         <div className="service-line">
                 <div className="service" onClick={onSelectService}>
-                    <img src={Gathering}/>
+                    <img src={Gathering} alt=""/>
                     <div className="service-lettering">Worship Guide</div>
                 </div>
         </div>

@@ -12,6 +12,8 @@ body
     display: block
     overflow: hidden
 
+    //navbar styling
+
     .navbar-screen-overlay
         background-color: black
         z-index: 50
@@ -105,7 +107,7 @@ body
         // background-image: linear-gradient(rgba(181, 219, 223, 1) 1, rgba(161, 209, 215, 1) 1)
         text-align: center
         color: white
-        background-color: black // can change to background image
+        background-color: black
 
         .navbar-gradient
             position: absolute
@@ -198,6 +200,8 @@ body
         z-index: 6
         animation: 1.5s ease-in-out navbar-header
 
+
+    // Main Menu Styling
 
     .main-content-container
         position: absolute
@@ -314,6 +318,8 @@ body
                             animation: 1s ease-in service-border
                             opacity: 0.5
 
+
+    // Slide Show Styling
 
     span
         display: flex
@@ -492,6 +498,78 @@ body
                 right: auto
                 left: 101%
 
+
+    //Connecion Card Styling
+    .connection-wrapper
+        height: 100%
+        width: 100%
+        position: absolute
+        margin: 0
+        padding: 0
+
+        .connection-background
+            height: 90%
+            width: 90%
+            display: flex
+            align-items: center
+            flex-flow: column
+            background-color: white
+            border: solid 2px
+            box-shadow: 1px 1px 5px black  
+            top: 5%
+            left: 5%
+            position: absolute
+
+
+        h1
+            margin: 0
+            padding: 0
+            display: block
+            width: 100%
+            text-align: center
+            margin-top: 2.5%
+            margin-bottom: 2.5%
+
+        form
+            display: block
+            width: 90%
+            margin: 0
+            padding: 0
+
+            input, textarea
+                width: 90%
+                background: none
+                border: none
+                border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+                margin-bottom: 5px
+
+            .connection-checkboxes
+                text-align: left
+
+                div
+                    display: flex
+                    align-items: center
+
+                    input
+                        display: inline
+                        width: 1.5rem
+                        height: 1.5rem
+
+                    label
+                        display: inline
+
+            .button-wrapper
+                margin-top: 1rem
+                width: 100%
+                text-align: center
+
+                button
+                    background-color: rgba(118, 194, 95, 1)
+                    color: white
+                    font-size: 1rem
+
+
+//keyframes
 
 @keyframes service-border
     0%

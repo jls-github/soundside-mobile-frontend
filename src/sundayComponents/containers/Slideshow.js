@@ -66,7 +66,7 @@ const Slideshow = ({serviceId}) => {
         if (service) {
             setActiveSlide(service.map(section => section.slides).flat()[activeIndex])
         }
-    })
+    }, [service])
 
     return(
         <Fragment>

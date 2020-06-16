@@ -47,7 +47,7 @@ const Navbar = () => {
                         <li></li>
                         <li></li>
                     </ul>
-                    <img className="navbar-logo" src={Logo} alt="Soundside Church" onClick={e => handleLogoClick()}/>
+                    <img className="navbar-logo" src={Logo} alt="Soundside Church" onClick={e => handleLogoClick()} alt=""/>
                 </div>
                 <div className="navbar navbar-inactive" ref={navRef}>
                     <div className="navbar-gradient">

@@ -18,7 +18,7 @@ const Navbar = () => {
     return(
         <div className="navbar-wrapper">
             <li className="navbar-links"><Link to="/admin">All Services</Link></li>
-            <li><img onClick={handleLogoLink} className="navbar-logo" src={Logo} /></li>
+            <li><img onClick={handleLogoLink} className="navbar-logo" src={Logo} alt="" /></li>
             <li className="logout"><div onClick={handleLogout}>Logout</div></li>
         </div>
     )

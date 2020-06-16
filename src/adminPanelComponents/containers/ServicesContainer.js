@@ -36,7 +36,7 @@ const ServicesContainer = () => {
         }
 
         fetchServices()
-    }, [])
+    }, [history])
 
     return(
         <div className="services-container">

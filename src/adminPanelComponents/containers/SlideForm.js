@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useRef, Fragment} from 'react';
 import arrayMove from 'array-move';
-import SortableContainer from '../components/SortableContainer.js'
-import Section from './Section.js'
-import {APIROOT, HEADERS} from '../../constraints/index.js'
-import {useHistory} from 'react-router-dom'
-import ValidationHOC from '../HOCs/ValidationHOC.js'
-import AdminPanelWrapperHOC from '../HOCs/AdminPanelWrapperHOC'
+import SortableContainer from '../components/SortableContainer.js';
+import Section from './Section.js';
+import {APIROOT, HEADERS} from '../../constraints/index.js';
+import {useHistory} from 'react-router-dom';
+import ValidationHOC from '../HOCs/ValidationHOC.js';
+import AdminPanelWrapperHOC from '../HOCs/AdminPanelWrapperHOC';
 
 
 const SlideForm = ({serviceId}) => { //this is messy and could be claned up with a state manager

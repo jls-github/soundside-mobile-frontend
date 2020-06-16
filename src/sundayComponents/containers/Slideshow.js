@@ -11,21 +11,24 @@ const Slideshow = ({serviceId}) => {
     const [slideLength, setSlideLength] = useState(0)
     const [activeSlide, setActiveSlide] = useState(null)
     const [swipeDirection, setSwipeDirection] = useState("forward")
+    const [active, setActive] = useState(true)
 
 
     const history = useHistory()
 
     const onNextSlide = () => {
-        if (activeIndex < slideLength - 1) {
+        if (activeIndex < slideLength - 1 && active) {
             setSwipeDirection("forward")
             setActiveIndex(activeIndex + 1)
+            setActive(false)
         }
     }
 
     const onPreviousSlide = () => {
-        if (activeIndex > 0) {
+        if (activeIndex > 0 && active) {
             setSwipeDirection("back")
             setActiveIndex(activeIndex - 1)
+            setActive(false)
         }
     }
 
@@ -67,6 +70,14 @@ const Slideshow = ({serviceId}) => {
             setActiveSlide(service.map(section => section.slides).flat()[activeIndex])
         }
     }, [service, activeIndex])
+
+    useEffect(() => {
+        if (!active) {
+            setTimeout(() => {
+                setActive(true)
+            }, 1000)
+        }
+    }, [active])
 
     return(
         <Fragment>

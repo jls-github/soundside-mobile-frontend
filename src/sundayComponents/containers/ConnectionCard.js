@@ -49,7 +49,7 @@ const ConnectionCard = () => {
     return(
         <div className="connection-wrapper">
             <div className="connection-background">
-                <h1>Connect</h1>
+                <h1>Connection Card</h1>
                 <form onSubmit={e => handleSubmit(e)}>
                     <input onChange={e => handleNameChange(e)} placeholder="Full Name" value={fullName}/>
                     <input onChange={e => handleEmailChange(e)} placeholder="Email" value={email}/>

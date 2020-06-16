@@ -25,7 +25,7 @@ const ChurchServiceContainer = ({location}) => {
                 <img className="sunday-service-picture" src={BackgroundImage}/>
                 <Navbar />
                 <div className="main-content-container">
-                {router()}
+                    {router()}
                 </div>
             </div>
 

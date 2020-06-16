@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import {useHistory} from 'react-router-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {APIROOT} from '../../constraints/index.js'
@@ -69,12 +69,14 @@ const Slideshow = ({serviceId}) => {
     })
 
     return(
-        <ReactCSSTransitionGroup
-            transitionName={swipeDirection === "forward" ? "next-slide" : "prev-slide"}
-            transitionEnterTimeout={1000}
-            transitionLeaveTimeout={1000}>
-                {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} onNextSlide={onNextSlide} onPreviousSlide={onPreviousSlide}/> : null }
-        </ReactCSSTransitionGroup>
+        <Fragment>
+            <ReactCSSTransitionGroup
+                transitionName={swipeDirection === "forward" ? "next-slide" : "prev-slide"}
+                transitionEnterTimeout={1000}
+                transitionLeaveTimeout={1000}>
+                    {activeSlide ? <Slide key={activeSlide.id} slide={activeSlide} onNextSlide={onNextSlide} onPreviousSlide={onPreviousSlide}/> : null }
+            </ReactCSSTransitionGroup>
+        </Fragment>
     )
 
 }

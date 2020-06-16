@@ -115,8 +115,8 @@ const Slideshow = ({serviceId}) => {
         <Fragment>
             <ReactCSSTransitionGroup
                 transitionName={swipeDirection === "forward" ? "next-slide" : "prev-slide"}
-                transitionEnterTimeout={1000}
-                transitionLeaveTimeout={1000}>
+                transitionEnterTimeout={600}
+                transitionLeaveTimeout={600}>
                     {service ? slideSwitch() : null }
             </ReactCSSTransitionGroup>
         </Fragment>

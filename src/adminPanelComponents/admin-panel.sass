@@ -101,6 +101,7 @@ button:focus
         position: absolute
         width: 100%
         height: 100%
+        z-index: -1
 
         .navbar-wrapper
             width: 100%
@@ -129,6 +130,9 @@ button:focus
                 div
                     text-align: right
                     margin-right: 10px
+                
+                div:hover
+                    color: grey
 
             .navbar-links
                 text-align: left
@@ -137,6 +141,11 @@ button:focus
                 a
                     color: inherit
                     text-decoration: inherit
+                    margin-left: 10px
+                    margin-right: 10px
+
+                a:hover
+                    color: grey
 
         .services-container
             position: absolute
@@ -158,7 +167,7 @@ button:focus
                 align-items: center
                 justify-content: center
                 display: grid
-                grid-template-rows: 0 80% 10%
+                grid-template-rows: 5% 80% 10%
                 grid-template-columns: 80%
 
                 .services-header
@@ -167,7 +176,6 @@ button:focus
                     margin-left: auto
                     margin-right: auto
                     text-align: center
-                    font-size: 1.5rem
 
                 .services-index-grid
                     display: grid
@@ -364,23 +372,77 @@ button:focus
     // textarea::-webkit-scrollbar
     //     display: none
 
-    textarea::-webkit-scrollbar-button
-        display: none
+    // textarea::-webkit-scrollbar-button
+    //     display: none
 
-    textarea::-webkit-scrollbar-track
-        display: none
+    // textarea::-webkit-scrollbar-track
+    //     display: none
 
-    textarea::-webkit-scrollbar-track-piece
-        display: none
+    // textarea::-webkit-scrollbar-track-piece
+    //     display: none
 
-    textarea::-webkit-scrollbar-thumb
-        display: none
+    // textarea::-webkit-scrollbar-thumb
+    //     display: none
 
-    textarea::-webkit-scrollbar-corner
-        display: none
+    // textarea::-webkit-scrollbar-corner
+    //     display: none
 
-    textarea::-webkit-resizer  
-        display: none
+    // textarea::-webkit-resizer  
+    //     display: none
+
+
+.connection-wrapper
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: -1
+
+.connection-box
+    width: 80%
+    height: 75%
+    background-color: snow
+    border: 2px solid rgba(0, 0, 0, 0.5)
+    box-shadow: 1px 1px 2.5px black
+    border-radius: 20px
+    display: grid
+    grid-template-rows: 20% 70%
+
+    .connection-box-header
+        display: flex
+        justify-content: center
+
+    .connections-overflow-wrapper
+        display: block
+        width: 100%
+        height: 100%
+        overflow: auto
+
+    .connections-list
+        max-height: 100%
+        position: relative
+        left: 5%
+        border: 1px solid black
+        width: 90%
+
+        tr
+            border-top: 1px solid black
+            min-width: 100%
+            
+            th
+                margin-left: 10px
+                margin-right: 10px
+                text-align: left
+
+        .odd
+            background: lightgrey
+
+
+
 
 .delete-x
     position: absolute

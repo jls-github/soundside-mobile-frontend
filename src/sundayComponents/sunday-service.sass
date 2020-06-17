@@ -12,6 +12,9 @@ body
     display: block
     overflow: hidden
 
+    span
+      z-index: -1
+
     //navbar styling
 
     .navbar-screen-overlay
@@ -209,6 +212,7 @@ body
         bottom: 0
         left: 0
         right: 0
+        z-index: -1
         @media (min-width: 600px)
             display: flex
             justify-content: center
@@ -523,6 +527,7 @@ body
             position: absolute
             border-radius: 5px
             top: 5%
+            z-index: 1
             @media (min-width: 600px)
                 width: 400px
                 justify-self: center
@@ -613,7 +618,7 @@ body
         .connection-background-leave
             top: 5%
 
-        .connection-background-leave-active
+        .connection-background-leave.connection-background-leave-active
             top: 100%
             transition: top 600ms ease-in
 

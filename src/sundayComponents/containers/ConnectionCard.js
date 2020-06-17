@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {APIROOT, HEADERS} from '../../constraints/index.js'
 
 const ConnectionCard = () => {
 
@@ -48,6 +49,10 @@ const ConnectionCard = () => {
             hear_about_church: checkbox2,
             talk_to_pastor: checkbox3
         }
+        fetch(APIROOT + '/connections', {
+            headers: HEADERS,
+            body: JSON.stringify({connection: connection})
+        })
         console.log(connection)
         setSubmitted(true)
     }
@@ -67,7 +72,7 @@ const ConnectionCard = () => {
             transitionEnter={false}
             transitionLeaveTimeout={600}>
                 {!submitted ? 
-                <div className="connection-background">
+                <div className="connection-background" key="connection">
                     <h1>Connection Card</h1>
                     <form onSubmit={e => handleSubmit(e)}>
                         <input onChange={e => handleNameChange(e)} placeholder="Full Name" value={fullName}/>
@@ -95,7 +100,7 @@ const ConnectionCard = () => {
                 </div>
                 : null}
              </ReactCSSTransitionGroup>
-             {submitted ? <h1 className="connection-confirmation">Thank you!</h1> : null}
+             {submitted ? <h1 className="connection-confirmation" key="confirmation">Thank you!</h1> : null}
         </div>
     )
 }

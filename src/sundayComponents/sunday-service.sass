@@ -229,6 +229,9 @@ body
             justify-content: center
 
             .services-list
+                display: grid
+                grid-template-rows: 7rem 13rem
+                height: 20rem
 
                 .service-line
                     display: block
@@ -277,7 +280,6 @@ body
                         display: flex
                         align-items: center
                         justify-content: center
-                        border: solid 1px
                         box-shadow: 1px 1px 3px black 
                         border: 2px solid rgba(0, 0, 0, 0.5)
                         position: relative
@@ -290,9 +292,15 @@ body
                             position: absolute
                             max-width: 100%
                             width: 100%
-                            opacity: 0.3
                             overflow: hidden
-                            animation: 1s ease-in service-picture
+
+                        .outdoor-img
+                            animation: 1s ease-in outdoor-picture
+                            opacity: 0.75
+
+                        .indoor-img
+                            opacity: 0.5
+                            animation: 1s ease-in indoor-picture
 
                         .service-lettering
                             color: white
@@ -323,6 +331,78 @@ body
                             width: 100%
                             animation: 1s ease-in service-border
                             opacity: 0.5
+
+                // .connect-line
+                //     top: 1rem
+                //     height: 12rem
+                //     width: 100%
+                //     background-color: red
+                //     width: 90%
+                //     position: relative
+                //     left: 5%
+                //     display: flex
+                //     justify-content: center
+                //     align-items: center
+                //     @media (min-width: 600px)
+                //         width: 400px
+
+                //     .connect-block
+                //         height: 12rem
+                //         width: 100%
+                //         background-color: black
+                //         box-shadow: 1px 1px 3px black 
+                //         border: 2px solid rgba(0, 0, 0, 0.5)
+                //         border-radius: 2px
+                //         display: grid
+                //         grid-template-rows: 2rem 2rem 2rem 1fr
+                //         overflow: hidden
+
+                //         img
+                //             position: absolute
+                //             max-width: 100%
+                //             width: 100%
+                //             opacity: 0.3
+                //             overflow: hidden
+                //             animation: 1s ease-in service-picture
+
+
+                //         .connect-block-header
+                //             color: white
+                //             font-size: 1.65rem
+                //             opacity: 1
+                //             z-index: 1
+                //             position: relative
+                //             grid-row-start: 2
+                //             z-index: 1
+
+                            // .connect-block-header::before
+                            //     content: ""
+                            //     height: 1px
+                            //     position: absolute
+                            //     top: 0
+                            //     right: 0
+                            //     background-color: white
+                            //     width: 100%
+                            //     z-index: 1
+                            //     animation: 1s ease-in service-border
+                            //     opacity: 0.5
+
+                            // .connect-block-header::after
+                            //     content: ""
+                            //     position: absolute
+                            //     bottom: 0
+                            //     left: 0
+                            //     background-color: white
+                            //     height: 1px
+                            //     width: 100%
+                            //     animation: 1s ease-in service-border
+                            //     opacity: 0.5
+
+                        // .connect-block-content
+                        //     grid-row: 4
+                        //     color: white
+                        //     opacity: 1
+                        //     z-index: 1
 
 
     // Slide Show Styling
@@ -643,11 +723,17 @@ body
     100%
         width: 100%
 
-@keyframes service-picture
+@keyframes indoor-picture
     0%
         opacity: 0
     100%
-        opacity: 0.3
+        opacity: 0.5
+
+@keyframes outdoor-picture
+    0%
+        opacity: 0
+    100%
+        opacity: 0.75
 
 @keyframes service-wrapper
     0%

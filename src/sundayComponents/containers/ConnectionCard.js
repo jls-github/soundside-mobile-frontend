@@ -50,6 +50,7 @@ const ConnectionCard = () => {
             talk_to_pastor: checkbox3
         }
         fetch(APIROOT + '/connections', {
+            method: "POST",
             headers: HEADERS,
             body: JSON.stringify({connection: connection})
         })

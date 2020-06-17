@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {APIROOT, HEADERS} from '../../constraints/index.js'
 import Connection from '../components/Connection.js'
 import ValidationHOC from '../HOCs/ValidationHOC.js'
 import AdminPanelWrapperHOC from '../HOCs/AdminPanelWrapperHOC.js'
@@ -17,23 +16,7 @@ const ConnectionsContainer = () => {
     }
 
     useEffect(() => {
-        async function fetchConnections() {
-            const response = await fetch(APIROOT + '/connections', {
-                headers: {
-                    ...HEADERS,
-                    Authorization: `Bearer ${localStorage.getItem("token")}`
-                }
-            })
-            const json = await response.json()
-            if (json.error) {
-                console.log(json.error)
-            } else {
-                console.log(json)
-                setConnections(json)
-            }
-        }
-
-        fetchConnections()
+        setConnections(null)
     }, [])
 
     return(

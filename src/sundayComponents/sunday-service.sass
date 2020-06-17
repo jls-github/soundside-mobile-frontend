@@ -506,21 +506,26 @@ body
         position: absolute
         margin: 0
         padding: 0
+        display: flex
+        justify-content: center
+        align-items: center 
 
         .connection-background // this could use better styling for more distinct look/feel
             height: 90%
-            width: 90%
             display: flex
             align-items: center
             flex-flow: column
             background-color: white
             border: solid 2px
             box-shadow: 1px 1px 5px black  
-            top: 5%
-            left: 5%
-            position: absolute
             animation: connection-card 750ms ease-in
             overflow: scroll
+            position: absolute
+            @media (min-width: 600px)
+                width: 400px
+                justify-self: center
+            @media (max-width: 599px)
+                width: 90%
 
         h1
             margin: 0

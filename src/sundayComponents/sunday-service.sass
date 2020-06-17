@@ -11,9 +11,12 @@ body
     right: 0
     display: block
     overflow: hidden
+    z-index: -1
 
-    span
-      z-index: -1
+    span:first-child
+      z-index: 0
+
+    
 
     //navbar styling
 
@@ -212,7 +215,6 @@ body
         bottom: 0
         left: 0
         right: 0
-        z-index: -1
         @media (min-width: 600px)
             display: flex
             justify-content: center
@@ -513,6 +515,10 @@ body
         display: flex
         justify-content: center
         align-items: center 
+        z-index: 1
+
+        span
+            z-index: 1
 
         .connection-background // this could use better styling for more distinct look/feel
             height: 90%

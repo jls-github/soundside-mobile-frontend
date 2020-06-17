@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 import SlideForm from './SlideForm.js';
 import Login from '../components/Login.js';
 import ServicesContainer from './ServicesContainer.js'
+import ConnectionsContainer from './ConnectionsContainer.js'
 import '../admin-panel.sass'
 
 const AdminPanelContainer = ({location}) => {
@@ -16,6 +17,7 @@ const AdminPanelContainer = ({location}) => {
 
             switch(path[2]) {
                 case "login": return <Login />
+                case "connections": return <ConnectionsContainer />
                 case "service": return <SlideForm serviceId={path[3]}/>
                 default: history.push('/admin')
             }

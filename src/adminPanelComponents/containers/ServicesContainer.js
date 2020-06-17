@@ -41,7 +41,7 @@ const ServicesContainer = () => {
     return(
         <div className="services-container">
             <div className="services-index">
-                <div className="services-header">All Services</div>
+                <div className="services-header"><h1>All Services</h1></div>
                 <div className="services-index-grid">
                     {services ? populateServices() : 'loading...'}
                 </div>

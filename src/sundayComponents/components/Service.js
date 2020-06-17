@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Gathering from '../../images/gathering.jpg'
+import Worship from '../../images/outdoor-worship.jpg'
 import {useHistory} from 'react-router-dom'
 import {APIROOT} from '../../constraints/index.js'
 
@@ -35,7 +35,7 @@ const Service = () => {
     return (
         <div className="service-line">
                 <div className="service" onClick={onSelectService}>
-                    <img src={Gathering} alt=""/>
+                    <img className="outdoor-img" src={Worship} alt=""/>
                     <div className="service-lettering">Worship Guide</div>
                 </div>
         </div>

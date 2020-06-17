@@ -46,6 +46,7 @@ const ConnectionsContainer = () => {
 
                 <table className="connections-list">
                     <tr>
+                        <th>Date</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Comment</th>

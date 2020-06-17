@@ -2,10 +2,11 @@ import React from 'react'
 
 const Connection = (props) => {
 
-    const {name, email, comment, learn_about_jesus, hear_about_church, talk_to_pastor, id} = props.connection
+    const {name, date, email, comment, learn_about_jesus, hear_about_church, talk_to_pastor, id} = props.connection
 
     return(
         <tr className={id % 2 !== 0 ? "odd" : null}>
+            <td>{date}</td>
             <td>{name}</td>
             <td>{email}</td>
             <td>{comment}</td>

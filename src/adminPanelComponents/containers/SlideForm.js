@@ -265,4 +265,4 @@ const SlideForm = ({serviceId}) => { //this is messy and could be claned up with
     )
 }
 
-export default ValidationHOC(AdminPanelWrapperHOC(SlideForm))
+export default AdminPanelWrapperHOC(ValidationHOC(SlideForm))

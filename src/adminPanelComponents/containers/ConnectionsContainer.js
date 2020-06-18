@@ -62,4 +62,4 @@ const ConnectionsContainer = () => {
     )
 }
 
-export default ValidationHOC(AdminPanelWrapperHOC(ConnectionsContainer))
+export default AdminPanelWrapperHOC(ValidationHOC(ConnectionsContainer))

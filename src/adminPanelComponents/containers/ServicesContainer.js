@@ -51,4 +51,4 @@ const ServicesContainer = () => {
     )
 }
 
-export default ValidationHOC(AdminPanelWrapperHOC(ServicesContainer))
+export default AdminPanelWrapperHOC(ValidationHOC(ServicesContainer))

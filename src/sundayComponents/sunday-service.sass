@@ -1,3 +1,6 @@
+*
+    z-index: 30
+    
 body
     position: fixed
     width: 100%
@@ -11,10 +14,10 @@ body
     right: 0
     display: block
     overflow: hidden
-    z-index: -1
+    z-index: 20
 
     span:first-child
-      z-index: 0
+      z-index: 30
 
     
 
@@ -22,7 +25,7 @@ body
 
     .navbar-screen-overlay
         background-color: black
-        z-index: 50
+        z-index: 90
         height: 100%
         width: 100%
         opacity: 0.8
@@ -48,14 +51,14 @@ body
         height: 100%
         width: 100%
         position: absolute
-        z-index: -1
+        z-index: 20
         animation: 1.5s ease-out logo
 
 
     .sunday-service-picture
         position: absolute
         height: 100%
-        z-index: -2
+        z-index: 10
         opacity: 0.35
         animation: 1s ease-out main-background-picture
 
@@ -180,7 +183,7 @@ body
         right: 0
         top: 0
         background-color: white
-        z-index: 6
+        z-index: 60
         animation: 1s ease-out navbar-header-close
 
     .navbar-active
@@ -203,7 +206,7 @@ body
         right: 0
         top: 0
         background-color: white
-        z-index: 6
+        z-index: 60
         animation: 1.5s ease-in-out navbar-header
 
 
@@ -306,7 +309,7 @@ body
                             color: white
                             font-size: 1.65rem
                             opacity: 1
-                            z-index: 1
+                            z-index: 40
                             position: relative
 
                         .service-lettering::before
@@ -317,7 +320,7 @@ body
                             right: 0
                             background-color: white
                             width: 100%
-                            z-index: 1
+                            z-index: 40
                             animation: 1s ease-in service-border
                             opacity: 0.5
 
@@ -387,7 +390,7 @@ body
                 .slide-title
                     font-size: 2rem
                     font-weight: bold
-                    z-index: 3
+                    z-index: 50
                     @media (min-width: 600px)
                         margin-bottom: 20px
                     @media (max-height: 600px)
@@ -397,7 +400,7 @@ body
                     line-height: 2
                     font-size: 1.35rem
                     white-space: before
-                    z-index: 3
+                    z-index: 50
                     @media (max-height: 600px)
                         font-size: 1rem
 
@@ -426,7 +429,7 @@ body
                     margin: 0
                     margin-left: 1rem
                     padding: 0
-                    z-index: 10
+                    z-index: 80
 
                 .right-button
                     display: block
@@ -439,7 +442,7 @@ body
                     border: none
                     margin-right: 1rem
                     padding: 0
-                    z-index: 10
+                    z-index: 80
 
         .scroll-dots
             bottom: 0
@@ -527,10 +530,10 @@ body
         display: flex
         justify-content: center
         align-items: center 
-        z-index: 1
+        z-index: 40
 
         span
-            z-index: 1
+            z-index: 40
 
         .connection-background // this could use better styling for more distinct look/feel
             height: 90%
@@ -545,7 +548,7 @@ body
             position: absolute
             border-radius: 5px
             top: 5%
-            z-index: 1
+            z-index: 40
             @media (min-width: 600px)
                 width: 400px
                 justify-self: center
@@ -606,7 +609,7 @@ body
                         height: 100%
                         border: 1px solid black
                         opacity: 1
-                        z-index: 7
+                        z-index: 70
                         background-color: white
 
                     input:checked::after
@@ -643,7 +646,7 @@ body
         .connection-confirmation
             position: absolute
             top: 10%
-            z-index: -1
+            z-index: 20
             animation: connection-confirmation 1s ease-in-out
 
 

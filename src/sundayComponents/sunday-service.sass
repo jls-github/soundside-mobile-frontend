@@ -19,6 +19,9 @@ body
     
 
     //navbar styling
+    
+    span:first-child
+        z-index: 90
 
     .navbar-screen-overlay
         background-color: black
@@ -30,21 +33,17 @@ body
 
     .navbar-screen-overlay-enter
         opacity: 0.01
-        z-index: 90
 
     .navbar-screen-overlay-enter.navbar-screen-overlay-enter-active
         opacity: 0.8
         transition: opacity 400ms ease-in
-        z-index: 90
 
     .navbar-screen-overlay-leave
         opacity: 0.8
-        z-index: 90
 
     .navbar-screen-overlay-leave.navbar-screen-overlay-leave-active
         opacity: 0.01
         transition: opacity 400ms ease-in
-        z-index: 90
 
     .sunday-service-background
         // background-image: linear-gradient(to top left, rgba(120, 162, 193, 1), rgba(251, 254, 253, 0.3)) - for blue theme

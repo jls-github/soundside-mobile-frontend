@@ -1,6 +1,5 @@
 import React, {useRef, useState, Fragment, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Logo from '../../images/soundside-logo.png'
 import {Link} from 'react-router-dom'
 

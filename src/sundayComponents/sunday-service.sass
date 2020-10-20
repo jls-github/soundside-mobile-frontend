@@ -30,6 +30,7 @@ body
         width: 100%
         opacity: 0.8
         position: fixed
+        animation: nav-overlay 400ms ease-in-out
 
     .navbar-screen-overlay-enter
         opacity: 0.01
@@ -721,6 +722,18 @@ body
         opacity: 1
     90%
         opacity: 0
+    100%
+        opacity: 0
+    
+@keyframes nav-overlay
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+    
+@keyframes nav-overlay-close
+    0%
+        opacity: 1
     100%
         opacity: 0
 

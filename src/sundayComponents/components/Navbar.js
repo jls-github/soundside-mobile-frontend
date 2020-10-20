@@ -33,13 +33,7 @@ const Navbar = () => {
 
     return(
         <Fragment>
-
-            <ReactCSSTransitionGroup
-                transitionName="navbar-screen-overlay"
-                transitionEnterTimeout={400}
-                transitionLeaveTimeout={400}>
-                {navBarActive ? <div key="overlay" className="navbar-screen-overlay" onClick={handleNavbarSlide}></div> : null}
-            </ReactCSSTransitionGroup>
+            {navBarActive ? <div key="overlay" className="navbar-screen-overlay" onClick={handleNavbarSlide}></div> : null}
             <div>
                 <div className="top-navbar">
                     <ul className="navbar-button" onClick={handleNavbarSlide}>

@@ -8,11 +8,20 @@ const Navbar = () => {
     const [navBarActive, setNavBarActive] = useState(false)
 
     const navRef = useRef(null)
+    
+    const overlayRef = useRef(null)
 
     const history = useHistory()
 
     const handleNavbarSlide = () => {
-        setNavBarActive(!navBarActive)
+        if (!navBarActive) {
+            setNavBarActive(true)
+        } else {
+            overlayRef.classList.add("nav-screen-overlay-leaving"
+            setTimeout(() => {
+                setNavBarActive(false)
+            }, 400)
+        }
     }
 
     const handleLogoClick = () => {
@@ -32,7 +41,7 @@ const Navbar = () => {
 
     return(
         <Fragment>
-            {navBarActive ? <div key="overlay" className="navbar-screen-overlay" onClick={handleNavbarSlide}></div> : null}
+            {navBarActive ? <div key="overlay" ref={overlayRef} className="navbar-screen-overlay" onClick={handleNavbarSlide}></div> : null}
             <div>
                 <div className="top-navbar">
                     <ul className="navbar-button" onClick={handleNavbarSlide}>

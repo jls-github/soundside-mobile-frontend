@@ -17,7 +17,7 @@ const Navbar = () => {
         if (!navBarActive) {
             setNavBarActive(true)
         } else {
-            overlayRef.classList.add("nav-screen-overlay-leaving"
+            overlayRef.classList.add("nav-screen-overlay-leaving")
             setTimeout(() => {
                 setNavBarActive(false)
             }, 400)

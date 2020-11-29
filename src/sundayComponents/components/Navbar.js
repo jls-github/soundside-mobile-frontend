@@ -46,6 +46,7 @@ const Navbar = () => {
                     <div className="navbar-gradient">
                         <ul className="navbar-list" >
                             <div className="navbar-header">Engaging Others<br />With the Love of Christ</div>
+                            <li><a href="https://www.signupgenius.com/go/5080545aaae2da1ff2-soundside">Holiday Help</a></li>
                             <li onClick={handleNavbarSlide}><Link to="/church" >Services</Link></li>
                             <li onClick={handleNavbarSlide}><Link to="/church/connect">Connect</Link></li>
                             {/* <li>Community Groups</li>

@@ -7350,11 +7350,6 @@
   dependencies:
     "minimist" "^1.2.5"
 
-"mobile-device-detect@^0.4.3":
-  "integrity" "sha512-SN9EBE9SoJgkb83kuUVoIp3R9OGYE5dYEnLEz2oLooh0DzgtQ72BJmpNGqrgFvmfE4iLR2CaVJ3RjUcStheVZg=="
-  "resolved" "https://registry.npmjs.org/mobile-device-detect/-/mobile-device-detect-0.4.3.tgz"
-  "version" "0.4.3"
-
 "move-concurrently@^1.0.1":
   "integrity" "sha1-viwAX9oy4LKa8fBdfEszIUxwH5I="
   "resolved" "https://registry.npmjs.org/move-concurrently/-/move-concurrently-1.0.1.tgz"
@@ -9216,13 +9211,6 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
-"react-pwa-install@^1.0.12":
-  "integrity" "sha512-zy1ZPfUIDTiBap1pycB6IZw+8wSRwncFwtjuUHYwRX2+285EabTcvXAwl2PdIzcXc1fh+K0ZI6Snccx5bgLpxg=="
-  "resolved" "https://registry.npmjs.org/react-pwa-install/-/react-pwa-install-1.0.12.tgz"
-  "version" "1.0.12"
-  dependencies:
-    "mobile-device-detect" "^0.4.3"
-
 "react-router-dom@^5.2.0":
   "integrity" "sha512-gxAmfylo2QUjcwxI63RhQ5G85Qqt4voZpUXSEqCwykV0baaOTQDR1f0PmY8AELqIyVc0NEZUj0Gov5lNGcXgsA=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-5.2.0.tgz"
@@ -9339,7 +9327,7 @@
     "prop-types" "^15.5.6"
     "warning" "^3.0.0"
 
-"react@^16.13.1", "react@16.x":
+"react@^16.13.1":
   "integrity" "sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.13.1.tgz"
   "version" "16.13.1"
@@ -11230,13 +11218,6 @@
   "version" "3.0.0"
   dependencies:
     "loose-envify" "^1.0.0"
-
-"watchpack-chokidar2@^2.0.0":
-  "integrity" "sha512-9TyfOyN/zLUbA288wZ8IsMZ+6cbzvsNyEzSBp6e/zkifi6xxbl8SmQ/CxQq32k8NNqrdVEVUVSEf56L4rQ/ZxA=="
-  "resolved" "https://registry.npmjs.org/watchpack-chokidar2/-/watchpack-chokidar2-2.0.0.tgz"
-  "version" "2.0.0"
-  dependencies:
-    "chokidar" "^2.1.8"
 
 "watchpack@^1.6.0":
   "integrity" "sha512-aWAgTW4MoSJzZPAicljkO1hsi1oKj/RRq/OJQh2PKI2UKL04c2Bs+MBOB+BBABHTXJpf9mCwHN7ANCvYsvY2sg=="

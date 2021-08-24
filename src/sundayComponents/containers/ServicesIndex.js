@@ -40,7 +40,7 @@ const ServicesIndex = (props) => {
                 <Connect />
                 {showPrompt && <div>
                     <p>Want to install this app on your phone?</p>
-                    <p>iOS: Click on the <img src={NavigationAction} />, scroll down and select "Add To Home Screen"</p>
+                    <p>iOS: Click on the <img alt="" src={NavigationAction} />, scroll down and select "Add To Home Screen"</p>
                     <p>Android: Click <bold onClick={handleClickInstall}>here</bold></p>
                 </div>}
             </div>

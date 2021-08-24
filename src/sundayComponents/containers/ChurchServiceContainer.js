@@ -55,7 +55,7 @@ const ChurchServiceContainer = () => {
         <Navbar />
         <div className="main-content-container">{router()}</div>
       </div>
-      {showInstallPrompt && <button onClick={handleClickInstall}>Install</button>}
+      {showInstallPrompt && <button style={{position: "absolute", top: 0}} onClick={handleClickInstall}>Install</button>}
     </Fragment>
   );
 };

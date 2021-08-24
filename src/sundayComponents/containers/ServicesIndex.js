@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import Service from '../components/Service.js'
 import Connect from '../components/Connect.js'
-import Install from '../components/Install.js'
+import NavigationAction from '../../images/Navigation_Action.png'
 
 const ServicesIndex = (props) => {
-    const [showInstallPrompt, setShowInstallPrompt] = useState(false)
+    // const [showInstallPrompt, setShowInstallPrompt] = useState(false)
     const [deferredPrompt, setDeferredPrompt] = useState(null)
 
     useEffect(() => {
@@ -14,14 +14,14 @@ const ServicesIndex = (props) => {
           // Stash the event so it can be triggered later.
           setDeferredPrompt(e)
           // Update UI notify the user they can install the PWA
-          setShowInstallPrompt(true)
+        //   setShowInstallPrompt(true)
           // Optionally, send analytics event that PWA install promo was shown.
           console.log(`'beforeinstallprompt' event was fired.`);
         });
       }, []);
     
       const handleClickInstall = async () => {
-        setShowInstallPrompt(false)
+        // setShowInstallPrompt(false)
         deferredPrompt.prompt()
         const { outcome } = await deferredPrompt.userChoice;
         // Optionally, send analytics event with outcome of user choice
@@ -29,6 +29,8 @@ const ServicesIndex = (props) => {
         // We've used the prompt, and can't use it again, throw it away
         setDeferredPrompt(null);
       }
+
+      const showPrompt = ('standalone' in window.navigator && window.navigator.standalone !== true)
     
 
     return(
@@ -36,7 +38,11 @@ const ServicesIndex = (props) => {
             <div className="services-list">
                 <Service />
                 <Connect />
-                {showInstallPrompt && <Install handleClick={handleClickInstall} />}
+                {showPrompt && <div>
+                    <p>Want to install this app on your phone?</p>
+                    <p>iOS: Click on the {NavigationAction}, scroll down and select "Add To Home Screen"</p>
+                    <p>Android: Click <bold onClick={handleClickInstall}>here</bold></p>
+                </div>}
             </div>
         </div>
     )

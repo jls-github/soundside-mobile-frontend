@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Service from '../components/Service.js'
 import Connect from '../components/Connect.js'
 import Install from '../components/Install.js'

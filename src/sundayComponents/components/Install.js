@@ -8,11 +8,11 @@ const Install = ({handleClick}) => {
         <div className="service-line">
             <div onClick={handleClick} className="service">
                 <img className="indoor-img" src={Gathering} alt=""/>
-                <div className="service-lettering">Connect</div>
+                <div className="service-lettering">Install</div>
             </div>
         </div>
     )
 
 }
 
-export default Connect
+export default Install
